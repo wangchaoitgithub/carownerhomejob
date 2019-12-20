@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.process.ProcessBaseRecordMapper">
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.process.ProcessBaseRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="is_Deleted" jdbcType="CHAR" property="isDeleted" />
+    <result column="create_Operator" jdbcType="VARCHAR" property="createOperator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_Operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_Modify_Time" jdbcType="TIMESTAMP" property="lastModifyTime" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="next_check_user_id" jdbcType="BIGINT" property="nextCheckUserId" />
+    <result column="business_type" jdbcType="VARCHAR" property="businessType" />
+    <result column="business_id" jdbcType="VARCHAR" property="businessId" />
+    <result column="process_type" jdbcType="VARCHAR" property="processType" />
+    <result column="result" jdbcType="VARCHAR" property="result" />
+    <result column="remark_check" jdbcType="VARCHAR" property="remarkCheck" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="last_process_id" jdbcType="BIGINT" property="lastProcessId" />
+    <result column="bak1" jdbcType="VARCHAR" property="bak1" />
+    <result column="bak2" jdbcType="VARCHAR" property="bak2" />
+    <result column="bak3" jdbcType="VARCHAR" property="bak3" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, user_id, 
+    next_check_user_id, business_type, business_id, process_type, result, remark_check, 
+    status, last_process_id, bak1, bak2, bak3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from process_base_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from process_base_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.process.ProcessBaseRecord">
+    insert into process_base_record (id, is_Deleted, create_Operator, 
+      create_time, last_Operator, last_Modify_Time, 
+      user_id, next_check_user_id, business_type, 
+      business_id, process_type, result, 
+      remark_check, status, last_process_id, 
+      bak1, bak2, bak3)
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{userId,jdbcType=BIGINT}, #{nextCheckUserId,jdbcType=BIGINT}, #{businessType,jdbcType=VARCHAR}, 
+      #{businessId,jdbcType=VARCHAR}, #{processType,jdbcType=VARCHAR}, #{result,jdbcType=VARCHAR}, 
+      #{remarkCheck,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{lastProcessId,jdbcType=BIGINT}, 
+      #{bak1,jdbcType=VARCHAR}, #{bak2,jdbcType=VARCHAR}, #{bak3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.process.ProcessBaseRecord">
+    insert into process_base_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="isDeleted != null">
+        is_Deleted,
+      </if>
+      <if test="createOperator != null">
+        create_Operator,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastOperator != null">
+        last_Operator,
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="nextCheckUserId != null">
+        next_check_user_id,
+      </if>
+      <if test="businessType != null">
+        business_type,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="processType != null">
+        process_type,
+      </if>
+      <if test="result != null">
+        result,
+      </if>
+      <if test="remarkCheck != null">
+        remark_check,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="lastProcessId != null">
+        last_process_id,
+      </if>
+      <if test="bak1 != null">
+        bak1,
+      </if>
+      <if test="bak2 != null">
+        bak2,
+      </if>
+      <if test="bak3 != null">
+        bak3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="nextCheckUserId != null">
+        #{nextCheckUserId,jdbcType=BIGINT},
+      </if>
+      <if test="businessType != null">
+        #{businessType,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=VARCHAR},
+      </if>
+      <if test="processType != null">
+        #{processType,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        #{result,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkCheck != null">
+        #{remarkCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="lastProcessId != null">
+        #{lastProcessId,jdbcType=BIGINT},
+      </if>
+      <if test="bak1 != null">
+        #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null">
+        #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null">
+        #{bak3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.process.ProcessBaseRecord">
+    update process_base_record
+    <set>
+      <if test="isDeleted != null">
+        is_Deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="nextCheckUserId != null">
+        next_check_user_id = #{nextCheckUserId,jdbcType=BIGINT},
+      </if>
+      <if test="businessType != null">
+        business_type = #{businessType,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null">
+        business_id = #{businessId,jdbcType=VARCHAR},
+      </if>
+      <if test="processType != null">
+        process_type = #{processType,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        result = #{result,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkCheck != null">
+        remark_check = #{remarkCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="lastProcessId != null">
+        last_process_id = #{lastProcessId,jdbcType=BIGINT},
+      </if>
+      <if test="bak1 != null">
+        bak1 = #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null">
+        bak2 = #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null">
+        bak3 = #{bak3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.process.ProcessBaseRecord">
+    update process_base_record
+    set is_Deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      user_id = #{userId,jdbcType=BIGINT},
+      next_check_user_id = #{nextCheckUserId,jdbcType=BIGINT},
+      business_type = #{businessType,jdbcType=VARCHAR},
+      business_id = #{businessId,jdbcType=VARCHAR},
+      process_type = #{processType,jdbcType=VARCHAR},
+      result = #{result,jdbcType=VARCHAR},
+      remark_check = #{remarkCheck,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      last_process_id = #{lastProcessId,jdbcType=BIGINT},
+      bak1 = #{bak1,jdbcType=VARCHAR},
+      bak2 = #{bak2,jdbcType=VARCHAR},
+      bak3 = #{bak3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.process.ProcessBaseRecord" resultMap="BaseResultMap">
+      select *
+      from process_base_record
+      where is_deleted = 'n'
+      <if test="starDate != null and endDate != null" >
+        and create_time BETWEEN #{starDate} and #{endDate}
+      </if>
+      <if test="userId != null" >
+        and user_id =#{userId}
+      </if>
+      order by id
+          limit #{pageStart},#{limit}
+    </select>
+
+
+  <select id="pageListAllSize" parameterType="com.zhiguan.carownerhomecrm.domain.process.ProcessBaseRecord" resultType="Integer">
+          select count(1) from process_base_record
+          where is_deleted = 'n'
+        <if test="starDate != null and endDate != null" >
+          and create_time BETWEEN #{starDate} and #{endDate}
+        </if>
+    </select>
+
+
+</mapper>

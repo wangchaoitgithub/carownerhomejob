@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <groupId>com.zhiguan</groupId>
+    <artifactId>carownerhomecrm</artifactId>
+    <version>0.0.3</version>
+    <packaging>war</packaging>
+    <name>carownerhomecrm</name>
+    <description>车友会的后台管理系统</description>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <!-- 自己公司的业务包  start -->
+        <dependency>
+            <groupId>com.zhiguan</groupId>
+            <artifactId>commonNew</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <!-- 自己公司的业务包  end -->
+
+        <!-- =========================== struts  start =========================== -->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <version>2.3.16.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-spring-plugin</artifactId>
+            <version>2.3.16.3</version>
+            <exclusions>
+                <!-- struts2-spring-plugin里面包含spring3.0.5的包 -->
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-beans</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-asm</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- =========================== struts  end =========================== -->
+
+
+        <!-- velocity模板引擎，替代jsp，页面静态化   -->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>velocity-tools</groupId>
+            <artifactId>velocity-tools</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts-tiles</artifactId>
+            <version>1.3.10</version>
+        </dependency>
+        <!-- velocity模板引擎，替代jsp，页面静态化   -->
+
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-json-plugin</artifactId>
+            <version>2.3.16.2</version>
+        </dependency>
+
+        <!-- 生成缩略图 -->
+        <dependency>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>0.4.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20140107</version>
+        </dependency>
+
+        <!--
+        如果报错的haunt，请把官方的ueditor-1.1.1.jar放到E:\m2Repository\no\目录，然后cmd里面执行这个
+        mvn install:install-file -Dfile=E:\m2Repository\no\ueditor-1.1.1.jar -DgroupId=com.baidu.ueditor -DartifactId=ueditor -Dversion=1.1.1 -Dpackaging=jar -DgeneratePom=true -DcreateChecksum=true
+         -->
+        <!--<dependency>
+            <groupId>com.baidu.ueditor</groupId>
+            <artifactId>ueditor</artifactId>
+            <version>1.1.1</version>
+        </dependency>-->
+
+        <!-- 即时通信用的 -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+        <!-- 支付宝支付需要的JAR -->
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <!-- 自动生成mybatis代码的工具类 -->
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+        <!-- 生成缩略图 -->
+        <dependency>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>0.4.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.1.41</version>
+        </dependency>
+        <!-- 日志框架 log4j2.0版本跟1.X性能有质的飞跃 日志级别（高到低）：OFF、FATAL、ERROR（默认）、WARN、INFO、DEBUG、TRACE、 ALL -->
+
+
+        <!-- 单元测试 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jtester</groupId>
+            <artifactId>jtester</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jtester</groupId>
+            <artifactId>jtesterIntegrated</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jtester</groupId>
+            <artifactId>jtesterJunit</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jtester</groupId>
+            <artifactId>jtesterNodep</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+
+        <!-- =========================== Spring  start =========================== -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>3.2.11.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>3.2.11.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>3.2.11.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>3.2.11.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>3.2.11.RELEASE</version>
+        </dependency>
+
+        <!-- =========================== Spring  end =========================== -->
+
+        <!-- =========================== mybatis  start =========================== -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.2.7</version>
+        </dependency>
+        <!-- =========================== mybatis  end =========================== -->
+
+        <!-- 数据库连接   -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.32</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>1.7.3</version>
+        </dependency>
+
+        <!-- excel 导入 poi start -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.10.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.10.1</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <resources>
+
+
+            <!-- 让jsp生效 -->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <!-- 让jsp生效 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+            <!-- 让webapp目录生效 -->
+            <resource>
+                <directory>src/main/webapp</directory>
+                <targetPath>META-INF/resources</targetPath>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+
+        </resources>
+        <!-- 最后打成的war包名，war包名就是context，url的前缀 -->
+        <finalName>carownerhomecrm</finalName>
+        <plugins>
+            <!-- 编译插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+
+
+            <!-- mybatis 自动生成代码工具 -->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.6</version>
+                <configuration>
+                    <!-- 配置文件位置-->
+                   <!-- <configuration>generatorConfig.xml</configuration>-->
+                    <verbose>true</verbose>
+                    <overwrite>false</overwrite>
+                </configuration>
+                <dependencies>
+                </dependencies>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

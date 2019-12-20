@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.phone.PhoneSmsRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.phone.PhoneSmsRecord" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="is_deleted" property="isDeleted" jdbcType="CHAR" />
+    <result column="create_Operator" property="createOperator" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_operator" property="lastOperator" jdbcType="VARCHAR" />
+    <result column="last_Modify_Time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="get_time" property="getTime" jdbcType="TIMESTAMP" />
+    <result column="send_time" property="sendTime" jdbcType="TIMESTAMP" />
+    <result column="receive_time" property="receiveTime" jdbcType="TIMESTAMP" />
+    <result column="done_time" property="doneTime" jdbcType="TIMESTAMP" />
+    <result column="verification_code" property="verificationCode" jdbcType="INTEGER" />
+    <result column="phone_number" property="phoneNumber" jdbcType="BIGINT" />
+    <result column="sms_content" property="smsContent" jdbcType="VARCHAR" />
+    <result column="uuid" property="uuid" jdbcType="VARCHAR" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="appid" property="appid" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="VARCHAR" />
+    <result column="bak1" property="bak1" jdbcType="VARCHAR" />
+    <result column="bak2" property="bak2" jdbcType="VARCHAR" />
+    <result column="bak3" property="bak3" jdbcType="VARCHAR" />
+    <result column="bak4" property="bak4" jdbcType="VARCHAR" />
+    <result column="bak5" property="bak5" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_deleted, create_Operator, create_time, last_operator, last_Modify_Time, get_time, 
+    send_time, receive_time, done_time, verification_code, phone_number, sms_content, 
+    uuid, customer_id, appid, state, bak1, bak2, bak3, bak4, bak5
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from phone_sms_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from phone_sms_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.phone.PhoneSmsRecord" >
+    insert into phone_sms_record (id, is_deleted, create_Operator, 
+      create_time, last_operator, last_Modify_Time, 
+      get_time, send_time, receive_time, 
+      done_time, verification_code, phone_number, 
+      sms_content, uuid, customer_id, 
+      appid, state, bak1, 
+      bak2, bak3, bak4, bak5
+      )
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{getTime,jdbcType=TIMESTAMP}, #{sendTime,jdbcType=TIMESTAMP}, #{receiveTime,jdbcType=TIMESTAMP}, 
+      #{doneTime,jdbcType=TIMESTAMP}, #{verificationCode,jdbcType=INTEGER}, #{phoneNumber,jdbcType=BIGINT}, 
+      #{smsContent,jdbcType=VARCHAR}, #{uuid,jdbcType=VARCHAR}, #{customerId,jdbcType=BIGINT}, 
+      #{appid,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{bak1,jdbcType=VARCHAR}, 
+      #{bak2,jdbcType=VARCHAR}, #{bak3,jdbcType=VARCHAR}, #{bak4,jdbcType=VARCHAR}, #{bak5,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.phone.PhoneSmsRecord" >
+    insert into phone_sms_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="createOperator != null" >
+        create_Operator,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastOperator != null" >
+        last_operator,
+      </if>
+      <if test="lastModifyTime != null" >
+        last_Modify_Time,
+      </if>
+      <if test="getTime != null" >
+        get_time,
+      </if>
+      <if test="sendTime != null" >
+        send_time,
+      </if>
+      <if test="receiveTime != null" >
+        receive_time,
+      </if>
+      <if test="doneTime != null" >
+        done_time,
+      </if>
+      <if test="verificationCode != null" >
+        verification_code,
+      </if>
+      <if test="phoneNumber != null" >
+        phone_number,
+      </if>
+      <if test="smsContent != null" >
+        sms_content,
+      </if>
+      <if test="uuid != null" >
+        uuid,
+      </if>
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="appid != null" >
+        appid,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="bak1 != null" >
+        bak1,
+      </if>
+      <if test="bak2 != null" >
+        bak2,
+      </if>
+      <if test="bak3 != null" >
+        bak3,
+      </if>
+      <if test="bak4 != null" >
+        bak4,
+      </if>
+      <if test="bak5 != null" >
+        bak5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null" >
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null" >
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="getTime != null" >
+        #{getTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="receiveTime != null" >
+        #{receiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="doneTime != null" >
+        #{doneTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="verificationCode != null" >
+        #{verificationCode,jdbcType=INTEGER},
+      </if>
+      <if test="phoneNumber != null" >
+        #{phoneNumber,jdbcType=BIGINT},
+      </if>
+      <if test="smsContent != null" >
+        #{smsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="uuid != null" >
+        #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="appid != null" >
+        #{appid,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="bak1 != null" >
+        #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null" >
+        #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null" >
+        #{bak3,jdbcType=VARCHAR},
+      </if>
+      <if test="bak4 != null" >
+        #{bak4,jdbcType=VARCHAR},
+      </if>
+      <if test="bak5 != null" >
+        #{bak5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.phone.PhoneSmsRecord" >
+    update phone_sms_record
+    <set >
+      <if test="isDeleted != null" >
+        is_deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null" >
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null" >
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="getTime != null" >
+        get_time = #{getTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendTime != null" >
+        send_time = #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="receiveTime != null" >
+        receive_time = #{receiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="doneTime != null" >
+        done_time = #{doneTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="verificationCode != null" >
+        verification_code = #{verificationCode,jdbcType=INTEGER},
+      </if>
+      <if test="phoneNumber != null" >
+        phone_number = #{phoneNumber,jdbcType=BIGINT},
+      </if>
+      <if test="smsContent != null" >
+        sms_content = #{smsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="uuid != null" >
+        uuid = #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="appid != null" >
+        appid = #{appid,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="bak1 != null" >
+        bak1 = #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null" >
+        bak2 = #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null" >
+        bak3 = #{bak3,jdbcType=VARCHAR},
+      </if>
+      <if test="bak4 != null" >
+        bak4 = #{bak4,jdbcType=VARCHAR},
+      </if>
+      <if test="bak5 != null" >
+        bak5 = #{bak5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.phone.PhoneSmsRecord" >
+    update phone_sms_record
+    set is_deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      get_time = #{getTime,jdbcType=TIMESTAMP},
+      send_time = #{sendTime,jdbcType=TIMESTAMP},
+      receive_time = #{receiveTime,jdbcType=TIMESTAMP},
+      done_time = #{doneTime,jdbcType=TIMESTAMP},
+      verification_code = #{verificationCode,jdbcType=INTEGER},
+      phone_number = #{phoneNumber,jdbcType=BIGINT},
+      sms_content = #{smsContent,jdbcType=VARCHAR},
+      uuid = #{uuid,jdbcType=VARCHAR},
+      customer_id = #{customerId,jdbcType=BIGINT},
+      appid = #{appid,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      bak1 = #{bak1,jdbcType=VARCHAR},
+      bak2 = #{bak2,jdbcType=VARCHAR},
+      bak3 = #{bak3,jdbcType=VARCHAR},
+      bak4 = #{bak4,jdbcType=VARCHAR},
+      bak5 = #{bak5,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <select id="pageListAll" parameterType="com.zhiguan.carownerhomecrm.domain.phone.PhoneSmsRecord" resultMap="BaseResultMap">
+	    select p.*,a.`name` as applyName from phone_sms_record p 
+	    LEFT JOIN base_apply_info a ON p.appid = a.appid
+		where p.is_deleted = 'n'
+		and p.customer_id = #{customerId}
+		and p.state = 'done'
+		<if test="appid != null" >
+		    and p.appid = #{appid}
+		</if>
+		<if test="starDate != null and endDate != null" >
+		    and p.create_time BETWEEN #{starDate} and #{endDate}
+		</if>
+		order by p.id desc
+		<if test="pageStart != 0" >
+			limit #{pageStart},#{limit}
+		</if>
+	</select>
+	<select id="pageListAllSize" parameterType="com.zhiguan.carownerhomecrm.domain.phone.PhoneSmsRecord" resultType="Integer">
+	    select count(1) from phone_sms_record 
+		where is_deleted = 'n'
+		and customer_id = #{customerId}
+		and state = 'done'
+		<if test="appid != null" >
+		    and appid = #{appid}
+		</if>
+		<if test="starDate != null and endDate != null" >
+		    and create_time BETWEEN #{starDate} and #{endDate}
+		</if>
+	</select>
+</mapper>

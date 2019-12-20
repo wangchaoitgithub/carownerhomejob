@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>客户基本信息</title>
+<meta charset="UTF-8" />
+<link href="../assets/bootstrap/css/jquery.jgrowl.css" rel="stylesheet"
+	media="screen">
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<link href="../assets/typeahead/typeahead.css" rel="stylesheet">
+<link href="../assets/bootstrap/css/formValidation.css" rel="stylesheet">
+<link href="../assets/bootstrap/css/jasny-bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="../appResource/js/jqgrid/ui.jqgrid-bootstrap.css">
+<style type="text/css">
+	.from-hide{
+		display: none;
+	}
+	.d-hide{
+		display: none;
+	}
+	.left-label{
+		padding-top: 7px;
+	    margin-bottom: 0;
+	    text-align: left;
+	}
+</style>
+</head>
+
+<body>
+	#include ("menu/navbar.html")
+	<div class="container-fluid">
+		<div class="row-fluid">
+		#include ("menu/sidebar_class.html") 
+		#include ("menu/Customerservice.html")
+		</div>
+		
+		<div id="rrapp" v-cloak>
+			<template>
+	    	<div v-show="!showList" class="col-md-10 panel panel-default" style="padding: 0;" >
+				<div class="panel-heading" style="margin-bottom: 15px">{{title}}</div>
+				<form class="form-horizontal" style="margin-left: 20%">
+					<div id="userId" class="form-group d-hide"></div>
+					<div class="form-group">
+						<div class="col-sm-3 control-label">客户名称：</div>
+						<div class="col-sm-3 left-label">
+							<label v-html="customer.nickName"></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-3 control-label">公司名称：</div>
+						<div class="col-sm-3 left-label">
+							<label v-html="customer.corporateName"></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-3 control-label">城市：</div>
+						<div class="col-sm-3 left-label">
+							<label v-html="customer.city"></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-3 control-label">应用数量：</div>
+						<div class="col-sm-3 left-label">
+							<!-- {{customer.applyCount | filterApplyCount}} -->
+							<label>{{customer.applyCount | filterApplyCount}}</label>
+						</div>
+						<!-- <div class="col-sm-6 left-label">
+							<a @click="applyInfo">详情</a>
+						</div> -->
+					</div>
+					<div class="form-group">
+						<div class="col-sm-3 control-label">请求剩余数量：</div>
+						<div class="col-sm-3 left-label">
+							<label v-html="customer.requestNumber"></label>
+						</div>
+						<!-- <div class="col-sm-6 left-label">
+							<a @click="requestInfo">详情</a>
+						</div> -->
+					</div>
+					<div class="form-group">
+						<div class="col-sm-3 control-label">使用剩余数量：</div>
+						<div class="col-sm-3 left-label">
+							<label v-html="customer.useNumber"></label>
+						</div>
+						<!-- <div class="col-sm-6 left-label">
+							<a @click="useInfo">详情</a>
+						</div> -->
+					</div>
+					<div class="form-group">
+						<div class="col-sm-3 control-label">总充值数：</div>
+						<div class="col-sm-3 left-label">
+							<label v-html="customer.rechargeCount"></label>
+						</div>
+						<!-- <div class="col-sm-6 left-label">
+							<a @click="rechargeInfo">详情</a>
+						</div> -->
+					</div>
+				</form>
+			</div>
+			</template>
+		</div>
+		
+	</div>
+	
+	<script src="../assets/bootstrap/js/jquery.min.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../assets/bootstrap/js/jquery.jgrowl.js"></script>
+	<script src="../assets/typeahead/typeahead.bundle.js"></script>
+	<script type="text/javascript" src="../assets/bootstrap/js/formValidation.js"></script>
+	<script type="text/javascript" src="../assets/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../assets/bootstrap/js/jasny-bootstrap.js"></script>
+	<script src="../assets/vue/vue.min.js"></script>
+	<script src="../appResource/js/jqgrid/grid.locale-cn.js"></script>
+	<script src="../appResource/js/jqgrid/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="../appResource/js/common.js"></script>
+	<script type="text/javascript" src="../appResource/js/baseCustomerInfo.js"></script>
+	<script type="text/javascript" src="../appResource/js/My97DatePicker/WdatePicker.js"></script>
+	
+	<script type="text/javascript">
+		$("#baseCustomerInfoId").attr("class", "active");
+	</script>
+</body>
+</html>

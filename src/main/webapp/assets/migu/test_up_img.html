@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <img src="" id="live_poster" style="display: none;"/>
+    <input type="file" class="fifle" id="poster_file" onchange="uploadLivePoster();"/></div>
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+<script src="./mg_img_upload.js"></script>
+<script>
+    //upload pic
+    var uid = 268;
+    var token ='6dee1b07b8acad53caa547325f920cd6160fd5d7f091422ad43872a489a7da69dafc0cccc8066efb';
+    var server_url = "http://test.migucloud.com/interface/upload/index?type=article&uid="+uid+"&token="+token;
+    //上传进度
+    function progress(percent){
+        // console.log(percent);
+    }
+    //上传图片配置
+    function up_img(obj,num) {
+        var img_upload = mg_img_upload.create({
+            'server':server_url,
+            'file_obj':obj,
+            'callback':callback,
+            'progress':progress,
+            'mark':num
+        });
+        img_upload.upload();
+    }
+
+    //上传图片
+    function uploadLivePoster() {
+        var obj=$('#poster_file')
+        up_img(obj,0)
+    }
+    //上传回调
+    function callback(data) {
+        data=JSON.parse(data);
+        poster_url = data.msg;
+        $("#live_poster").attr("src", poster_url);
+        $("#live_poster").css("display", "block");
+    }
+
+
+
+</script>
+</html>

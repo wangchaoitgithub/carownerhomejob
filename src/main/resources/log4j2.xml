@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 如果不在web.xml里面配置，log4j2会默认在classpath下面找文件名为：log4j2.xml的文件  -->
+<!-- create by shengfukang 2014.10.25  -->
+<configuration status="OFF">  
+   <appenders>
+    <Console name="Console" target="SYSTEM_OUT" >
+      <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+    </Console>
+    
+    <!-- 正式代码的日志目录 应用本身所有Java的日志 -->
+    <RollingFile name="appAll" fileName="/data/smsCustomerCrm/logs/app/all/app.log"
+                 filePattern="/data/smsCustomerCrm/logs/${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+      <PatternLayout pattern="%d{yyyy.MM.dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+      <SizeBasedTriggeringPolicy size="500 MB" />
+    </RollingFile>
+    
+    <!-- 正式代码的日志目录 service层的日志 -->
+    <RollingFile name="appService" fileName="/data/smsCustomerCrm/logs/app/service/service.log"
+                 filePattern="/data/smsCustomerCrm/logs/${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+      <PatternLayout pattern="%d{yyyy.MM.dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+      <SizeBasedTriggeringPolicy size="200 MB" />
+    </RollingFile>
+    
+    <!-- 正式代码的日志目录 action层的日志 -->
+    <RollingFile name="appAction" fileName="/data/smsCustomerCrm/logs/app/action/action.log"
+                 filePattern="/data/smsCustomerCrm/logs/${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+      <PatternLayout pattern="%d{yyyy.MM.dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+      <SizeBasedTriggeringPolicy size="200 MB" />
+    </RollingFile>
+    
+  </appenders>
+  
+  
+  
+  <!-- ==================================================== -->
+  				<!-- 打包上线前把下面所有指向Console的都去掉 -->
+   <!-- ==================================================== -->
+  <loggers>  
+  	<!-- 如果其他logger没有指定level，那默认采用root的level -->
+    <root level="trace">
+    	<appender-ref ref="Console"/>
+    	<appender-ref ref="appAll"/><!-- 这里选择打印正式日志，因为它在正式环境的log4j配置 -->
+    </root>
+    
+    <!-- service层统一用的 
+    additivity: 如果设置为true（默认值）则HelloLog4j的log会被打印两次，第二次打印是由于HelloLog4j同时也满足 root里面定义的trace -->
+    <logger name="service" level="info" additivity="false">  
+    	<appender-ref ref="appService"/>
+    	<appender-ref ref="Console"/>
+    </logger>
+    
+    <!-- action层统一用的 -->
+    <logger name="action" level="info" additivity="false">  
+    	<appender-ref ref="appAction"/>
+    	<appender-ref ref="Console"/>
+    </logger>
+    
+  </loggers>
+  
+</configuration> 

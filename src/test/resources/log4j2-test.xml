@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 如果不在web.xml里面配置，log4j2会默认在classpath下面找文件名为：log4j2.xml的文件 -->
+<configuration status="OFF">  
+   <appenders>
+    <Console name="Console" target="SYSTEM_OUT" >
+      <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+    </Console>
+    <!-- 测试代码的日志目录 -->
+    <File name="log" fileName="logTest/biz/test.log" append="false">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+    </File>
+    
+  </appenders>
+  
+  <loggers>  
+  	<!-- 如果其他logger没有指定level，那默认采用root的level -->
+    <root level="trace">
+      <appender-ref ref="Console"/>
+      <appender-ref ref="log"/>
+    </root>
+    
+  </loggers>  
+</configuration> 

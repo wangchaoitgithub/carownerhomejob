@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.base.BaseOperatorsInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.base.BaseOperatorsInfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="is_deleted" property="isDeleted" jdbcType="CHAR" />
+    <result column="create_Operator" property="createOperator" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_operator" property="lastOperator" jdbcType="VARCHAR" />
+    <result column="last_Modify_Time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="name_simple" property="nameSimple" jdbcType="VARCHAR" />
+    <result column="name_all" property="nameAll" jdbcType="VARCHAR" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="area_code" property="areaCode" jdbcType="VARCHAR" />
+    <result column="cust_id" property="custId" jdbcType="VARCHAR" />
+    <result column="appsecret" property="appsecret" jdbcType="VARCHAR" />
+    <result column="bak1" property="bak1" jdbcType="VARCHAR" />
+    <result column="bak2" property="bak2" jdbcType="VARCHAR" />
+    <result column="bak3" property="bak3" jdbcType="VARCHAR" />
+    <result column="bak4" property="bak4" jdbcType="VARCHAR" />
+    <result column="bak5" property="bak5" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_deleted, create_Operator, create_time, last_operator, last_Modify_Time, name_simple, 
+    name_all, country, area_code, cust_id, appsecret, bak1, bak2, bak3, bak4, bak5
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from base_operators_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from base_operators_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.base.BaseOperatorsInfo" >
+    insert into base_operators_info (id, is_deleted, create_Operator, 
+      create_time, last_operator, last_Modify_Time, 
+      name_simple, name_all, country, 
+      area_code, cust_id, appsecret, 
+      bak1, bak2, bak3, bak4, 
+      bak5)
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{nameSimple,jdbcType=VARCHAR}, #{nameAll,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, 
+      #{areaCode,jdbcType=VARCHAR}, #{custId,jdbcType=VARCHAR}, #{appsecret,jdbcType=VARCHAR}, 
+      #{bak1,jdbcType=VARCHAR}, #{bak2,jdbcType=VARCHAR}, #{bak3,jdbcType=VARCHAR}, #{bak4,jdbcType=VARCHAR}, 
+      #{bak5,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.base.BaseOperatorsInfo" >
+    insert into base_operators_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="createOperator != null" >
+        create_Operator,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastOperator != null" >
+        last_operator,
+      </if>
+      <if test="lastModifyTime != null" >
+        last_Modify_Time,
+      </if>
+      <if test="nameSimple != null" >
+        name_simple,
+      </if>
+      <if test="nameAll != null" >
+        name_all,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="areaCode != null" >
+        area_code,
+      </if>
+      <if test="custId != null" >
+        cust_id,
+      </if>
+      <if test="appsecret != null" >
+        appsecret,
+      </if>
+      <if test="bak1 != null" >
+        bak1,
+      </if>
+      <if test="bak2 != null" >
+        bak2,
+      </if>
+      <if test="bak3 != null" >
+        bak3,
+      </if>
+      <if test="bak4 != null" >
+        bak4,
+      </if>
+      <if test="bak5 != null" >
+        bak5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null" >
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null" >
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nameSimple != null" >
+        #{nameSimple,jdbcType=VARCHAR},
+      </if>
+      <if test="nameAll != null" >
+        #{nameAll,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null" >
+        #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="custId != null" >
+        #{custId,jdbcType=VARCHAR},
+      </if>
+      <if test="appsecret != null" >
+        #{appsecret,jdbcType=VARCHAR},
+      </if>
+      <if test="bak1 != null" >
+        #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null" >
+        #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null" >
+        #{bak3,jdbcType=VARCHAR},
+      </if>
+      <if test="bak4 != null" >
+        #{bak4,jdbcType=VARCHAR},
+      </if>
+      <if test="bak5 != null" >
+        #{bak5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.base.BaseOperatorsInfo" >
+    update base_operators_info
+    <set >
+      <if test="isDeleted != null" >
+        is_deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null" >
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null" >
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nameSimple != null" >
+        name_simple = #{nameSimple,jdbcType=VARCHAR},
+      </if>
+      <if test="nameAll != null" >
+        name_all = #{nameAll,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null" >
+        area_code = #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="custId != null" >
+        cust_id = #{custId,jdbcType=VARCHAR},
+      </if>
+      <if test="appsecret != null" >
+        appsecret = #{appsecret,jdbcType=VARCHAR},
+      </if>
+      <if test="bak1 != null" >
+        bak1 = #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null" >
+        bak2 = #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null" >
+        bak3 = #{bak3,jdbcType=VARCHAR},
+      </if>
+      <if test="bak4 != null" >
+        bak4 = #{bak4,jdbcType=VARCHAR},
+      </if>
+      <if test="bak5 != null" >
+        bak5 = #{bak5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.base.BaseOperatorsInfo" >
+    update base_operators_info
+    set is_deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      name_simple = #{nameSimple,jdbcType=VARCHAR},
+      name_all = #{nameAll,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      area_code = #{areaCode,jdbcType=VARCHAR},
+      cust_id = #{custId,jdbcType=VARCHAR},
+      appsecret = #{appsecret,jdbcType=VARCHAR},
+      bak1 = #{bak1,jdbcType=VARCHAR},
+      bak2 = #{bak2,jdbcType=VARCHAR},
+      bak3 = #{bak3,jdbcType=VARCHAR},
+      bak4 = #{bak4,jdbcType=VARCHAR},
+      bak5 = #{bak5,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <select id="selectInfo" resultMap="BaseResultMap" >
+	    select id,name_simple from base_operators_info 
+		where is_deleted = 'n'
+	</select>
+</mapper>

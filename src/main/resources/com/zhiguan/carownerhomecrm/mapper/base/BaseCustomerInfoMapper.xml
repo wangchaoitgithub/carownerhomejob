@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.base.BaseCustomerInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.base.BaseCustomerInfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="is_deleted" property="isDeleted" jdbcType="CHAR" />
+    <result column="create_Operator" property="createOperator" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_operator" property="lastOperator" jdbcType="VARCHAR" />
+    <result column="last_Modify_Time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="corporate_name" property="corporateName" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="accounts" property="accounts" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="request_number" property="requestNumber" jdbcType="BIGINT" />
+    <result column="use_number" property="useNumber" jdbcType="BIGINT" />
+    <result column="recharge_count" property="rechargeCount" jdbcType="BIGINT" />
+    <result column="bak1" property="bak1" jdbcType="VARCHAR" />
+    <result column="bak2" property="bak2" jdbcType="VARCHAR" />
+    <result column="bak3" property="bak3" jdbcType="VARCHAR" />
+    <result column="bak4" property="bak4" jdbcType="VARCHAR" />
+    <result column="bak5" property="bak5" jdbcType="VARCHAR" />
+    
+    <result column="applyCount" property="applyCount" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_deleted, create_Operator, create_time, last_operator, last_Modify_Time, nick_name, 
+    corporate_name, city, accounts, password, request_number, use_number, recharge_count, 
+    bak1, bak2, bak3, bak4, bak5
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from base_customer_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from base_customer_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.base.BaseCustomerInfo" >
+    insert into base_customer_info (id, is_deleted, create_Operator, 
+      create_time, last_operator, last_Modify_Time, 
+      nick_name, corporate_name, city, 
+      accounts, password, request_number, 
+      use_number, recharge_count, bak1, 
+      bak2, bak3, bak4, bak5
+      )
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{nickName,jdbcType=VARCHAR}, #{corporateName,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{accounts,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{requestNumber,jdbcType=BIGINT}, 
+      #{useNumber,jdbcType=BIGINT}, #{rechargeCount,jdbcType=BIGINT}, #{bak1,jdbcType=VARCHAR}, 
+      #{bak2,jdbcType=VARCHAR}, #{bak3,jdbcType=VARCHAR}, #{bak4,jdbcType=VARCHAR}, #{bak5,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.base.BaseCustomerInfo" >
+    insert into base_customer_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="createOperator != null" >
+        create_Operator,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastOperator != null" >
+        last_operator,
+      </if>
+      <if test="lastModifyTime != null" >
+        last_Modify_Time,
+      </if>
+      <if test="nickName != null" >
+        nick_name,
+      </if>
+      <if test="corporateName != null" >
+        corporate_name,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="accounts != null" >
+        accounts,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="requestNumber != null" >
+        request_number,
+      </if>
+      <if test="useNumber != null" >
+        use_number,
+      </if>
+      <if test="rechargeCount != null" >
+        recharge_count,
+      </if>
+      <if test="bak1 != null" >
+        bak1,
+      </if>
+      <if test="bak2 != null" >
+        bak2,
+      </if>
+      <if test="bak3 != null" >
+        bak3,
+      </if>
+      <if test="bak4 != null" >
+        bak4,
+      </if>
+      <if test="bak5 != null" >
+        bak5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null" >
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null" >
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateName != null" >
+        #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="accounts != null" >
+        #{accounts,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="requestNumber != null" >
+        #{requestNumber,jdbcType=BIGINT},
+      </if>
+      <if test="useNumber != null" >
+        #{useNumber,jdbcType=BIGINT},
+      </if>
+      <if test="rechargeCount != null" >
+        #{rechargeCount,jdbcType=BIGINT},
+      </if>
+      <if test="bak1 != null" >
+        #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null" >
+        #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null" >
+        #{bak3,jdbcType=VARCHAR},
+      </if>
+      <if test="bak4 != null" >
+        #{bak4,jdbcType=VARCHAR},
+      </if>
+      <if test="bak5 != null" >
+        #{bak5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.base.BaseCustomerInfo" >
+    update base_customer_info
+    <set >
+      <if test="isDeleted != null" >
+        is_deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null" >
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null" >
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nickName != null" >
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="corporateName != null" >
+        corporate_name = #{corporateName,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="accounts != null" >
+        accounts = #{accounts,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="requestNumber != null" >
+        request_number = #{requestNumber,jdbcType=BIGINT},
+      </if>
+      <if test="useNumber != null" >
+        use_number = #{useNumber,jdbcType=BIGINT},
+      </if>
+      <if test="rechargeCount != null" >
+        recharge_count = #{rechargeCount,jdbcType=BIGINT},
+      </if>
+      <if test="bak1 != null" >
+        bak1 = #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null" >
+        bak2 = #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null" >
+        bak3 = #{bak3,jdbcType=VARCHAR},
+      </if>
+      <if test="bak4 != null" >
+        bak4 = #{bak4,jdbcType=VARCHAR},
+      </if>
+      <if test="bak5 != null" >
+        bak5 = #{bak5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.base.BaseCustomerInfo" >
+    update base_customer_info
+    set is_deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      corporate_name = #{corporateName,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      accounts = #{accounts,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      request_number = #{requestNumber,jdbcType=BIGINT},
+      use_number = #{useNumber,jdbcType=BIGINT},
+      recharge_count = #{rechargeCount,jdbcType=BIGINT},
+      bak1 = #{bak1,jdbcType=VARCHAR},
+      bak2 = #{bak2,jdbcType=VARCHAR},
+      bak3 = #{bak3,jdbcType=VARCHAR},
+      bak4 = #{bak4,jdbcType=VARCHAR},
+      bak5 = #{bak5,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <select id="getCustomerInfo" resultMap="BaseResultMap" >
+		SELECT c.*, (SELECT COUNT(1) FROM
+				base_apply_info a
+			WHERE
+				a.customer_id = c.id
+			and a.is_deleted = 'n'
+			) AS applyCount
+		FROM
+			base_customer_info c
+		WHERE
+			c.accounts = #{0}
+		AND is_deleted = 'n'
+  </select>
+  
+</mapper>

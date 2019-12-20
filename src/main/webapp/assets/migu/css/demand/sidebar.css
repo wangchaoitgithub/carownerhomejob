@@ -1,0 +1,25 @@
+/*左侧菜单*/
+.sidebar { width: 176px; background: #f6f6f6; border: 1px solid #e6e6e6; border-top: none; height: 100%; float: left; /*padding-bottom: 1500px;*/ }
+.accordion { width: 100%; max-width: 360px; /*background: #FFF;*/ -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.accordion .link { cursor: pointer; display: block; padding: 15px 15px 15px 42px; color: #4D4D4D; font-size: 14px; font-weight: 700; /*border-bottom: 1px solid #CCC;*/ position: relative; -webkit-transition: all 0.4s ease; -o-transition: all 0.4s ease; transition: all 0.4s ease; }
+.accordion li:last-child .link { border-bottom: 0; }
+.accordion li i { position: absolute; top: 16px; left: 12px; font-size: 18px; color: #595959; -webkit-transition: all 0.4s ease; -o-transition: all 0.4s ease; transition: all 0.4s ease; }
+.accordion li i.fa-chevron-down { right: 12px; left: auto; font-size: 16px; }
+.accordion li.open .link { color: #fff; background: #f2b701; }
+.accordion li.open .link:hover { color: #fff; background: #f2b701; }
+.accordion li.open .link a { color: #fff; }
+.accordion li.open i.fa-chevron-down { -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg); transform: rotate(180deg); }
+.accordion li .link:hover { color: #fff; background: #f6d701; }
+.accordion .link a { color: #333; display: block; }
+.accordion li.current .link { color: #333333; background: #e6e6e6; }
+.accordion li.current .link:hover { color: #fff; background: #f6d701; }
+.accordion li.current .link a { color: #333333; }
+.accordion li.current i { color: #333333; }
+.submenu { display: none; /*background: #444359;*/ font-size: 14px; }
+.submenu li { /*border-bottom: 1px solid #4b4a5e;*/ }
+.submenu a { display: block; text-decoration: none; color: #333333; padding: 12px; padding-left: 42px; -webkit-transition: all 0.25s ease; -o-transition: all 0.25s ease; transition: all 0.25s ease; }
+.submenu a:hover { background: #f6d701; color: #333333; }
+.submenu .open { background: #f2b701; color: #FFF; }
+.submenu .open a { color: #FFF; }
+.submenu .open a:hover { background: #f2b701; color: #FFF; }
+

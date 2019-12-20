@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>用户信息</title>
+<meta charset="UTF-8" />
+<link href="../assets/bootstrap/css/jquery.jgrowl.css" rel="stylesheet"
+      media="screen">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<link href="../assets/typeahead/typeahead.css" rel="stylesheet">
+<link href="../assets/bootstrap/css/formValidation.css" rel="stylesheet">
+<link href="../assets/bootstrap/css/jasny-bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="../appResource/js/jqgrid/ui.jqgrid-bootstrap.css">
+<style type="text/css">
+        .dian{
+            float: left;
+            line-height: 2.5;
+            padding: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    #include ("menu/navbar.html")
+    <div class="container-fluid">
+        <div class="row-fluid">
+            #include ("menu/sidebar_class.html")
+            #include ("menu/Customerservice.html")
+        </div>
+        <div id="rrapp" v-cloak>
+            <div v-show="showList" class="col-md-10" style="padding: 0;">
+                <div class="grid-btn" style="padding-bottom: 15px;">
+                    <div class="col-sm-2" style="padding: 0;">
+                        <div id="commonId" style="display: none"></div>
+                        <input id="userId"  class="form-control"  placeholder="UserId"/>
+                    </div>
+                    <a style="margin-left: 5px" class="btn btn-default" @click="query">查询</a>
+<!--                    <a style="margin-left: 5px" class="btn btn-default" @click="delete">封号</a>-->
+<!--                    <a class="btn btn-primary" @click="delete"><i class="fa fa-pencil-square-o"></i>&nbsp;封号</a>-->
+
+                    <span class="dian">，</span>
+                    <div class="col-sm-2" style="padding: 0;">
+                        <input id="nickName" class="form-control"  placeholder="昵称/绰号"/>
+                    </div>
+                    <a class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改用户</a>
+                    <a class="btn btn-primary" @click="deleItem"><i class="fa fa-pencil-square-o"></i>&nbsp;封号/解封</a>
+<!--                    <a class="btn btn-primary" @click="deblocking"><i class="fa fa-pencil-square-o"></i>&nbsp;解封</a>-->
+
+                </div>
+                <table id="jqGrid"></table>
+                <div id="jqGridPager"></div>
+            </div>
+
+
+                <div v-show="!showList" class="col-md-10 panel panel-default" style="padding: 0;" >
+                    <div class="panel-heading" style="margin-bottom: 15px">{{title}}</div>
+                    <form class="form-horizontal" >
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">用户id
+                                <span style="color: red;">*</span>
+                            </div>
+                            <div class="col-sm-10">
+                            <input readonly="readonly" type="text"  class="form-control" v-model="customer.id" placeholder="用户id" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">昵称</div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" v-model="customer.nickName" placeholder="昵称" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">状态</div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" v-model="customer.state" placeholder="状态" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">群副牌号</div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" v-model="customer.viceNumber" placeholder="群副牌号" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label"></div>
+                            <input type="button" class="btn btn-primary" @click="saveOrUpdate" value="确定"/>
+                            &nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        <script src="../assets/bootstrap/js/jquery.min.js"></script>
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/bootstrap/js/jquery.jgrowl.js"></script>
+        <script src="../assets/typeahead/typeahead.bundle.js"></script>
+        <script type="text/javascript" src="../assets/bootstrap/js/formValidation.js"></script>
+        <script type="text/javascript" src="../assets/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="../assets/bootstrap/js/jasny-bootstrap.js"></script>
+        <script src="../assets/vue/vue.min.js"></script>
+        <script src="../appResource/js/jqgrid/grid.locale-cn.js"></script>
+        <script src="../appResource/js/jqgrid/jquery.jqGrid.min.js"></script>
+        <script type="text/javascript" src="../appResource/js/common.js"></script>
+        <script type="text/javascript" src="../appResource/js/userBaseInfo.js"></script>
+        <script type="text/javascript" src="../appResource/js/My97DatePicker/WdatePicker.js"></script>
+
+        <script type="text/javascript">
+            /*点击侧边栏变色*/
+            $("#userBaseInfoRecordId").attr("class", "active");
+        </script>
+</body>
+</html>

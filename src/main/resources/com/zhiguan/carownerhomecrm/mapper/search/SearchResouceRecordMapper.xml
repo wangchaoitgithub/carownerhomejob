@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.search.SearchResouceRecordMapper">
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.search.SearchResouceRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="is_Deleted" jdbcType="CHAR" property="isDeleted" />
+    <result column="create_Operator" jdbcType="VARCHAR" property="createOperator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_Operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_Modify_Time" jdbcType="TIMESTAMP" property="lastModifyTime" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="search_word" jdbcType="VARCHAR" property="searchWord" />
+    <result column="date" jdbcType="DATE" property="date" />
+    <result column="result_count" jdbcType="INTEGER" property="resultCount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, user_id, 
+    search_word, date, result_count
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from search_resouce_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from search_resouce_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.search.SearchResouceRecord">
+    insert into search_resouce_record (id, is_Deleted, create_Operator, 
+      create_time, last_Operator, last_Modify_Time, 
+      user_id, search_word, date, 
+      result_count)
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{userId,jdbcType=BIGINT}, #{searchWord,jdbcType=VARCHAR}, #{date,jdbcType=DATE}, 
+      #{resultCount,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.search.SearchResouceRecord">
+    insert into search_resouce_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="isDeleted != null">
+        is_Deleted,
+      </if>
+      <if test="createOperator != null">
+        create_Operator,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastOperator != null">
+        last_Operator,
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="searchWord != null">
+        search_word,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="resultCount != null">
+        result_count,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="searchWord != null">
+        #{searchWord,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=DATE},
+      </if>
+      <if test="resultCount != null">
+        #{resultCount,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.search.SearchResouceRecord">
+    update search_resouce_record
+    <set>
+      <if test="isDeleted != null">
+        is_Deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="searchWord != null">
+        search_word = #{searchWord,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        date = #{date,jdbcType=DATE},
+      </if>
+      <if test="resultCount != null">
+        result_count = #{resultCount,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.search.SearchResouceRecord">
+    update search_resouce_record
+    set is_Deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      user_id = #{userId,jdbcType=BIGINT},
+      search_word = #{searchWord,jdbcType=VARCHAR},
+      date = #{date,jdbcType=DATE},
+      result_count = #{resultCount,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+
+  <select id="pageListAll" parameterType="com.zhiguan.carownerhomecrm.domain.search.SearchResouceRecord" resultMap="BaseResultMap">
+        SELECT *
+         FROM search_resouce_record
+              order by id
+                  limit #{pageStart},#{limit}
+    </select>
+
+
+  <select id="pageListAllSize" parameterType="com.zhiguan.carownerhomecrm.domain.search.SearchResouceRecord" resultType="Integer">
+          select count(1) from search_resouce_record
+          where is_deleted = 'n'
+    </select>
+</mapper>

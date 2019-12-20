@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.customer.CustomerRechargeRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.customer.CustomerRechargeRecord" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="is_deleted" property="isDeleted" jdbcType="CHAR" />
+    <result column="create_Operator" property="createOperator" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_operator" property="lastOperator" jdbcType="VARCHAR" />
+    <result column="last_Modify_Time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="type" property="type" jdbcType="CHAR" />
+    <result column="count" property="count" jdbcType="INTEGER" />
+    <result column="current_balance" property="currentBalance" jdbcType="INTEGER" />
+    <result column="after_balance" property="afterBalance" jdbcType="INTEGER" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="bak1" property="bak1" jdbcType="VARCHAR" />
+    <result column="bak2" property="bak2" jdbcType="VARCHAR" />
+    <result column="bak3" property="bak3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_deleted, create_Operator, create_time, last_operator, last_Modify_Time, customer_id, 
+    type, count, current_balance, after_balance, reason, bak1, bak2, bak3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer_recharge_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from customer_recharge_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.customer.CustomerRechargeRecord" >
+    insert into customer_recharge_record (id, is_deleted, create_Operator, 
+      create_time, last_operator, last_Modify_Time, 
+      customer_id, type, count, 
+      current_balance, after_balance, reason, 
+      bak1, bak2, bak3)
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{customerId,jdbcType=BIGINT}, #{type,jdbcType=CHAR}, #{count,jdbcType=INTEGER}, 
+      #{currentBalance,jdbcType=INTEGER}, #{afterBalance,jdbcType=INTEGER}, #{reason,jdbcType=VARCHAR}, 
+      #{bak1,jdbcType=VARCHAR}, #{bak2,jdbcType=VARCHAR}, #{bak3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.customer.CustomerRechargeRecord" >
+    insert into customer_recharge_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="createOperator != null" >
+        create_Operator,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastOperator != null" >
+        last_operator,
+      </if>
+      <if test="lastModifyTime != null" >
+        last_Modify_Time,
+      </if>
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="count != null" >
+        count,
+      </if>
+      <if test="currentBalance != null" >
+        current_balance,
+      </if>
+      <if test="afterBalance != null" >
+        after_balance,
+      </if>
+      <if test="reason != null" >
+        reason,
+      </if>
+      <if test="bak1 != null" >
+        bak1,
+      </if>
+      <if test="bak2 != null" >
+        bak2,
+      </if>
+      <if test="bak3 != null" >
+        bak3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null" >
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null" >
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=CHAR},
+      </if>
+      <if test="count != null" >
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="currentBalance != null" >
+        #{currentBalance,jdbcType=INTEGER},
+      </if>
+      <if test="afterBalance != null" >
+        #{afterBalance,jdbcType=INTEGER},
+      </if>
+      <if test="reason != null" >
+        #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="bak1 != null" >
+        #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null" >
+        #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null" >
+        #{bak3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.customer.CustomerRechargeRecord" >
+    update customer_recharge_record
+    <set >
+      <if test="isDeleted != null" >
+        is_deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null" >
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null" >
+        last_operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=CHAR},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="currentBalance != null" >
+        current_balance = #{currentBalance,jdbcType=INTEGER},
+      </if>
+      <if test="afterBalance != null" >
+        after_balance = #{afterBalance,jdbcType=INTEGER},
+      </if>
+      <if test="reason != null" >
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="bak1 != null" >
+        bak1 = #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null" >
+        bak2 = #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null" >
+        bak3 = #{bak3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.customer.CustomerRechargeRecord" >
+    update customer_recharge_record
+    set is_deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      customer_id = #{customerId,jdbcType=BIGINT},
+      type = #{type,jdbcType=CHAR},
+      count = #{count,jdbcType=INTEGER},
+      current_balance = #{currentBalance,jdbcType=INTEGER},
+      after_balance = #{afterBalance,jdbcType=INTEGER},
+      reason = #{reason,jdbcType=VARCHAR},
+      bak1 = #{bak1,jdbcType=VARCHAR},
+      bak2 = #{bak2,jdbcType=VARCHAR},
+      bak3 = #{bak3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <select id="pageListAll" parameterType="com.zhiguan.carownerhomecrm.domain.customer.CustomerRechargeRecord" resultMap="BaseResultMap">
+	    select * from customer_recharge_record 
+		where is_deleted = 'n'
+		and customer_id = #{customerId}
+		order by id desc
+		limit #{pageStart},#{limit}
+	</select>
+	<select id="pageListAllSize" parameterType="com.zhiguan.carownerhomecrm.domain.customer.CustomerRechargeRecord" resultType="Integer">
+	    select count(1) from customer_recharge_record 
+		where is_deleted = 'n'
+		and customer_id = #{customerId}
+	</select>
+</mapper>

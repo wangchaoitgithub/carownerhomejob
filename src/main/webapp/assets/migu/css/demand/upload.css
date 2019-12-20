@@ -1,0 +1,2522 @@
+/*upload1 css*/
+.demand {
+    min-height: 500px;
+}
+
+.page.fixWidth {
+    width: 1000px !important;
+}
+
+.upload {
+    width: 1006px;
+    float: left; /*margin-left: 17px; margin-top: 10px;*/
+    height: 100%;
+}
+
+/*.upload h3 { height: 55px; line-height: 55px; background: #fff1e6; border: 1px solid #ffd09e; margin-top: 10px; color: #e09647; font-size: 14px; font-weight: normal; padding-left: 24px; border-radius: 3px; }*/
+.upload .add {
+    text-align: center;
+    color: #5f6266;
+    font-size: 14px;
+    margin-top: 115px;
+    margin-bottom: 30px;
+}
+
+.upload .btnadd {
+    cursor: pointer;
+}
+
+.upload #add_btn p {
+    margin-top: 30px;
+}
+
+.upload .file {
+    position: relative;
+    display: inline-block;
+    background:url(../../../migu/images/icon_uplode.png) no-repeat;
+    width: 130px;
+    height: 90px;
+    /*border: 1px dashed #99D3F5;*/
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    margin-top: 80px;
+    cursor: pointer;
+}
+
+.upload .file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    width: 130px;
+    height: 90px;
+    cursor: pointer;
+}
+
+.upload .file:hover {
+    background: url(../../images/icon_uplode.png) no-repeat;
+    /*border: 1px dashed #78C3F3;*/
+    width: 130px;
+    height: 90px;
+    color: #004974;
+    text-decoration: none;
+}
+
+.upload .warang {
+    width: 480px;
+    margin: 0 auto;
+    font-size: 14px;
+    text-align: -webkit-left;
+    color: #5f6266;
+    line-height: 25px;
+}
+
+.upload .all {
+    float: left;
+    font-size: 14px;
+    color: #3c485b;
+    margin-bottom: 20px;
+}
+
+.upload .ac {
+    float: left;
+    margin-right: 16px;
+    margin-top: 5px;
+}
+
+.upload .check {
+    float: left;
+    margin-right: 16px;
+    color: #cccccc;
+}
+
+.upload .check .selectOneUpload {
+    border: 1px solid #e6e6e6;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    margin:10px 0px 0px 0px;
+    float: left;
+}
+
+.upload .check .selectOneUpload .input_Upload {
+    position: absolute;
+    left:-5px;
+    top: -5px;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+
+.upload ul {
+    float: left;
+    width: 976px;
+    min-height: 183px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    padding: 26px 30px;
+}
+
+.upload ul li {
+    line-height: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+    clear: both;
+}
+
+.upload .cancel {
+    width: 19px;
+    height: 18px;
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    background: url(../../../../assets/migu/images/x.png) no-repeat;
+    cursor: pointer;
+}
+
+.upload .i1 {
+    float: left;
+    width: 100px;
+    text-align: right;
+    padding-right: 13px;
+}
+
+.upload .input {
+    float: left;
+    width: 613px;
+    border: 1px solid #cfcfcf;
+    height: 36px;
+}
+
+.upload .styled-select {
+    border: 1px solid #d9d9d9;
+    float: left;
+    width: 613px;
+    height: 36px;
+    line-height: 36px;
+    background: url(../../../../assets/migu/images/arrow.png) no-repeat right #fff;
+    overflow: hidden;
+}
+
+.upload .styled-select select {
+    color: #666666;
+    background: transparent;
+    width: 628px;
+    padding-left: 10px;
+    font-size: 14px;
+    border: 0px solid #e6e6e6;
+    height: 36px;
+    -webkit-appearance: none; /*for chrome*/
+    padding-right: 42px;
+}
+
+.upload .txt {
+    float: left;
+}
+
+.upload .txt label {
+    float: left;
+    width: 74px;
+    height: 36px;
+    margin-right: 8px;
+    padding: 0;
+    line-height: 36px;
+    background: #fff;
+}
+
+.upload .txt label .labelauty-checked {
+    line-height: 36px;
+}
+
+.upload .txt label .labelauty-unchecked {
+    line-height: 36px;
+}
+
+.upload .txt label .labelauty-unchecked-image {
+    width: 0;
+}
+
+.upload .txt label .labelauty-checked-image {
+    width: 0;
+}
+
+.upload .s {
+    float: right;
+    width: 92px;
+    height: 36px;
+    border: 1px solid #ccc;
+}
+
+.upload .l {
+    float: left;
+}
+
+.upload .r {
+    float: right;
+}
+
+.upload .filelist dd {
+    background: url("../../../../assets/migu/images/bg.png") no-repeat;
+    text-align: center; /*margin: 0 8px 20px 0;*/
+    position: relative;
+    display: inline;
+    float: left;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.upload .filelist dd .title {
+    float: left;
+    line-height: 22px;
+    height: 22px;
+    width: 100%;
+}
+
+.upload .filelist dd .name {
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-indent: 5px;
+    text-align: left;
+    font-size: 18px;
+    color: #333333;
+}
+
+.upload .filelist dd .size {
+    font-size: 18px;
+    color: #333333;
+    margin-left: 15px;
+    float: left;
+}
+
+.upload .filelist dd .state {
+    font-size: 14px;
+    color: #808080;
+    margin-left: 30px;
+    float: left;
+    margin-top: 3px;
+}
+
+.upload .filelist dd .progress { /*border: 1px solid #ddd;*/
+    background: #ddd;
+    width: 900px;
+    height: 8px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    color: #6dbfff;
+    position: relative;
+    margin-right: 10px;
+}
+
+.upload .filelist dd .progress span.percentage {
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #feb700;
+    position: absolute;
+}
+
+.upload .btn {
+    padding: 10px 20px;
+    border-radius: 3px;
+    background: #bfc7d4;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+    margin-top: 10px;
+}
+
+.upload .orange {
+    background: #feb700;
+    cursor: pointer;
+}
+
+.upload .filelist dd .progress span.red {
+    background: #eb6743;
+}
+
+.upload .filelist dd .progress span.green {
+    background: #5ecf2c;
+}
+
+.upload .yellow {
+    color: #feb700;
+}
+
+.upload .l label {
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    color: #333333;
+    float: left;
+    margin-right: 5px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.upload .cover {
+    float: left;
+    margin-right: 20px;
+}
+
+.upload .nomb li {
+    margin-bottom: 0;
+}
+
+.upload .mb {
+    margin-bottom: 30px;
+}
+
+.upload a {
+    color: #3e72c5;
+}
+
+.upload a:hover {
+    color: #feb700;
+}
+
+.upload .error {
+    color: #ee2f10;
+    background: url("../../../../assets/migu/images/error2.png") no-repeat 0 0;
+    padding-left: 30px;
+    margin-right: 30px;
+    height: 58px;
+    font-size: 14px;
+}
+
+.upload .success {
+    color: #24b90c;
+    background: url("../../../../assets/migu/images/success2.png") no-repeat 0 0;
+    padding-left: 30px;
+    margin-right: 30px;
+    height: 58px;
+    font-size: 14px;
+}
+
+#tips {
+    float: right;
+}
+
+.upload .add2 {
+    width: 974px;
+    background: #f5f5f5 none repeat scroll 0 0;
+    border: 1px dashed #d5dce5;
+    border-radius: 3px;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.upload #add_btn {
+    margin-left: 0;
+    width: 100%;
+    text-align: center; /*margin-top: 75px;*/
+}
+
+.divselect {
+    float: left;
+    position: relative;
+}
+
+.divselect cite {
+    border: 1px solid #cfcfcf;
+    float: left;
+    height: 36px;
+    width: 613px;
+    background: url(../../../../assets/migu/images/xjt.png) no-repeat right center;
+    text-align: left;
+    text-indent: 14px; /*color:#cccccc;*/
+}
+
+.divselect ul {
+    width: 530px;
+    border: 1px solid #cfcfcf;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 1;
+    margin-top: 38px;
+    display: none;
+    text-align: left;
+    padding: 15px 17px;
+}
+
+.divselect ul li {
+    height: auto;
+    float: left;
+    margin-left: 26px;
+}
+
+.divselect ul li a {
+    margin-bottom: 10px;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+    color: #666666;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 0 15px;
+    float: left;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.divselect ul li a:hover {
+    border: 1px solid #feb700;
+    color: #feb700;
+    border-radius: 3px;
+}
+
+.divselect .parent {
+    float: left;
+    color: #333333;
+    margin-left: -28px;
+}
+
+.divselect .cad {
+    width: 66px;
+    height: 28px;
+    line-height: 24px;
+    border: 1px dashed #d5dce5;
+    color: #666666;
+    border-radius: 3px;
+    float: right;
+    margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #f5f5f5;
+    text-align: center;
+    padding: 7px;
+}
+
+.divselect .cad:hover {
+    border: 1px dashed #feb700;
+    color: #feb700;
+    border-radius: 3px;
+}
+
+.divselect .cad1 {
+    width: 456px;
+    height: 36px;
+    line-height: 36px;
+    border: 1px dashed #d5dce5;
+    color: #666666;
+    border-radius: 3px;
+    float: right;
+    margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #f5f5f5;
+    text-align: center;
+    padding: 7px;
+}
+
+.divselect .cad1:hover {
+    border: 1px dashed #feb700; /*color:#feb700;*/
+    border-radius: 3px;
+}
+
+.divselect .ico {
+    float: left;
+    margin: 5px 10px 5px 180px;
+    width: 13px;
+    height: 13px;
+}
+
+.divselect .btncad {
+    float: left;
+    margin-top: -7px;
+    height: 20px;
+}
+
+#myCatDiv {
+    display: none;
+}
+
+.myCatDiv {
+    height: 110px;
+    text-align: center;
+    line-height: 30px;
+    color: #616366;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.myCatDiv p {
+    text-align: center;
+    line-height: 30px;
+    margin-top: 20px;
+}
+
+#popupLayer_myCatPopup a.ok {
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+    background: #f2b602;
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    border-radius: 3px;
+}
+
+#popupLayer_myCatPopup a.cancel {
+    width: 98px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #cccccc;
+    color: #333333;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    margin-left: 30px;
+    border-radius: 3px;
+}
+
+#popupLayer_myCatPopup a.cancel:hover {
+    background: #f2b602;
+    border: 1px solid #f2b602;
+    color: #fff;
+}
+
+#popupLayer_myCatPopup .popup-footer {
+    margin-bottom: 30px;
+}
+
+.catinput {
+    border: 1px solid #ccc;
+    width: 292px;
+    height: 36px;
+    margin-top: 38px;
+    text-indent: 10px;
+}
+
+.upload .upload_head {
+    text-indent: 1.25em;
+    height: 55px;
+    line-height: 55px;
+    background: #fdf4d8;
+    border: 1px solid #ffd09e;
+    margin-top: 0px;
+    color: #efb81a;
+    font-size: 18px;
+    font-weight: normal; /*padding-left: 24px;*/
+    border-radius: 3px;
+    text-align: left;
+}
+
+.upload #upload_list .upload_head {
+    background: #fff;
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0px;
+    padding-top: 8px; /*color: #333;*/
+}
+
+#addList ul {
+    float: left;
+    width: 100%; /*min-height: 183px;*/
+    font-size: 16px;
+    border: 0px solid #e6e6e6;
+    border-radius: 0px;
+    padding: 10px 10px 0 10px;
+}
+
+#addList ul li {
+    line-height: 32px;
+    height: 32px;
+    margin-top: 10px;
+    clear: both;
+    width: 100%;
+}
+.tanscodeType {
+    display: none;
+}
+
+#addList ul .item_title {
+    line-height: 32px;
+    height: 40px;
+    clear: both;
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+}
+
+#addList .cancel {
+    width: 19px;
+    height: 18px;
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    background: url("../../../../assets/migu/images/x.png") no-repeat;
+    cursor: pointer;
+}
+
+#addList .i1 {
+    float: left;
+    width: 90px;
+    text-align: right;
+    padding-right: 5px;
+}
+#addList .i1 i{
+    color:red;
+}
+#addList .i1 .transPublicOne,.transFlagOne{
+    float: right;
+    margin-right: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 43px;
+    height: 32px;
+    background-image: url(../../../../assets/migu/images/btn_close.png);
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+#addList #file_name {
+    max-width: 70%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+#addList .input {
+    float: left;
+    width: 420px;
+    border: 1px solid #cfcfcf;
+    height: 32px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#addList #tags {
+    width: 420px;
+}
+
+#addList .styled-select {
+    border: 1px solid #d9d9d9;
+    float: left;
+    width: 420px;
+    height: 32px;
+    line-height: 32px;
+    background: url(../../../../assets/migu/images/arrow.png) no-repeat right #fff;
+    overflow: hidden;
+}
+
+#addList .styled-select select {
+    color: #666666;
+    background: transparent;
+    width: 420px;
+    padding-left: 10px;
+    font-size: 14px;
+    border: 0px solid #e6e6e6;
+    height: 32px;
+    -webkit-appearance: none; /*for chrome padding-right: 42px;*/
+}
+
+#addList .txt {
+    float: left;
+}
+
+#addList .txt label {
+    float: left;
+    width: 74px;
+    height: 32px;
+    margin-right: 8px;
+    padding: 0;
+    line-height: 32px;
+    background: #fff;
+}
+
+/*#addList .s { float: left; width: 72px; height: 32px; border: 1px solid #ccc; }*/
+#addList .l {
+    float: left;
+    width: 170px;
+}
+
+#addList .r {
+    /*float: right; */
+    margin-left: 40px;
+    width: 300px;
+}
+#addList .r i{
+    color: red;
+}
+#addList #transBgOne{
+    float: right;
+    margin-right: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 42px;
+    height: 32px;
+    background-image: url(../../../../assets/migu/images/btn_close.png);
+    background-position: center;
+    background-repeat:no-repeat;
+}
+/*.btn_close {
+    background: url(../../../../assets/migu/images/btn_close.png) no-repeat 0 center;
+}
+.btn_open {
+    background: url(../../../../assets/migu/images/btn_open.png) no-repeat 0 center;
+}*/
+#addList .small-select {
+    border: 1px solid #d9d9d9;
+    float: left;
+    width: 72px;
+    height: 32px;
+    line-height: 32px;
+    background: url(../../../../assets/migu/images/arrow.png) no-repeat right #fff;
+    overflow: hidden;
+}
+
+#addList .small-select select {
+    color: #666666;
+    background: transparent;
+    width: 72px;
+    padding-left: 10px;
+    font-size: 14px;
+    border: 0px solid #e6e6e6;
+    height: 32px;
+    -webkit-appearance: none; /*for chrome padding-right: 42px;*/
+}
+
+.add dd {
+    height: auto;
+    border-bottom: 0px solid #dddddd;
+    width: 100%;
+}
+
+.add .d2 {
+    float: left;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.add .i3 {
+    float: left;
+    width: 25%;
+    margin-right: 0px;
+    text-align: right;
+    height: 32px;
+}
+
+.add .i3 .menu_slide {
+    float: left;
+    width: auto;
+    margin-right: 10px;
+    text-align: left;
+}
+.add .i3 .menu_slide .editor_icon{
+    width: 20px;
+    height: 20px;
+    /*background-image: url(../../../../assets/migu/images/btn_edit_normal.png);*/
+}
+.add .i3 .menu_slide .editor_icon1{
+    background-image: url(../../../../assets/migu/images/editor_icon.png);
+}
+
+.add .i3 .item_clear {
+    float: left;
+    margin-left: 80px;
+    /*margin-top: 8px;*/
+}
+.add .i3 img {
+    margin-top: 12px;
+}
+
+.add .info_slide {
+    padding-bottom: 10px;
+    border: none;
+    width: 100%;
+}
+
+#addList ul div i.fa {
+    position: absolute;
+    top: 18px;
+    left: 12px;
+    font-size: 18px;
+    color: #595959;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#addList ul div i.fa-chevron-down {
+   /* right: 138px;*/
+    left: auto;
+    font-size: 16px;
+}
+
+#addList ul div.open i.fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#addList .i2 {
+    float: left;
+    width: 55%;
+    text-align: left;
+}
+#addList .i4 {
+    float: right;
+    width:12%;
+}
+
+.add .lh {
+    min-height: 45px;
+    line-height: 45px;
+    color: #000;
+    font-size: 16px;
+    background: #f5f5f5;
+    margin: 15px 15px 0 15px;
+}
+
+.add .lh .ac {
+    float: left;
+    margin-right: 26px;
+    margin-left: 20px;
+}
+.add .lh .ac .selectAll{
+    background: #fff;
+    border:1px solid #e6e6e6;
+    width: 16px ;
+    height: 16px;
+    position: relative;
+    margin:15px 10px 0px 5px;
+    float: left;
+}
+.add .lh .ac .selectAll #CheckboxAll {
+    position: absolute;
+    left:-5px ;
+    top: -5px ;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.add .lh .count {
+    float: right;
+    margin-right: 30px;
+    font-weight: normal;
+    text-align: right;
+    padding: 16px 0 10px 0;
+}
+
+.add .lh .batchbtn {
+    float: left;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 30px;
+    background: #f2b602;
+    border-radius: 3px;
+    border: none;
+    color: #fff;
+    margin-top: -3px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.add .lh .st {
+    float: left;
+    margin-left: 54px;
+    margin-right: 10px;
+}
+
+.add .lh .styled-select {
+    color: #666666;
+    height: 36px;
+    line-height: 36px;
+    width: 120px;
+    background: url(../../../../assets/migu/images/arrow.png) no-repeat right #fff;
+    overflow: hidden;
+    float: left;
+    margin-top: 14px;
+    margin-right: 20px;
+    border: 1px solid #e6e6e6;
+}
+
+.add .lh .styled-select div {
+    overflow: hidden;
+}
+
+.add .lh .styled-select select {
+    color: #666666;
+    background: transparent;
+    width: 120px;
+    padding-left: 10px;
+    font-size: 14px;
+    border: 0px solid #e6e6e6;
+    height: 36px;
+    -webkit-appearance: none; /*for chrome padding-right: 42px;*/
+}
+
+.add .check {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.add .check .selectOne {
+    border: 1px solid #e6e6e6;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    margin:10px 10px 0px 5px;
+    float: left;
+}
+
+.add .check .selectOne .input_inner{
+    position: absolute;
+    left:-5px ;
+    top: -5px ;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+
+.add .multi_edit {
+    clear: both;
+    padding-bottom: 10px;
+    /*border: 1px solid #dddddd;*/
+}
+
+.add .multi_edit li {
+    line-height: 32px;
+    height: 32px;
+    margin-top: 10px;
+    clear: both;
+    width: 100%;
+}
+
+.add .multi_edit .item_title {
+    line-height: 32px;
+    height: 32px;
+    clear: both;
+    width: 100%;
+    background: #ccc;
+}
+
+/*.add .multi_edit .cancel { width: 19px; height: 18px; position: absolute; right: 14px; top: 14px; background: url(../../../../assets/migu/images/x.png)no-repeat; cursor: pointer; }*/
+.add .multi_edit .i1 {
+    float: left;
+    width: 90px;
+    text-align: right;
+    padding-right: 5px;
+}
+.add .multi_edit .i1 #transPublicAll{
+    float: right;
+    margin-right: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 43px;
+    height: 32px;
+    background-image: url(../../../../assets/migu/images/btn_close.png);
+    background-position: center;
+    background-repeat:no-repeat;
+}
+.add .multi_edit .i1 #transBgAll{
+    float: right;
+    margin-right: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 43px;
+    height: 32px;
+    background-image: url(../../../../assets/migu/images/btn_close.png);
+    background-position: center;
+    background-repeat:no-repeat;
+}
+.add .multi_edit .i1 i {
+    color: red;
+}
+
+.add .multi_edit #file_name {
+    max-width: 70%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+.add .multi_edit .input {
+    float: left;
+    width: 420px;
+    border: 1px solid #cfcfcf;
+    height: 32px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.add .multi_edit #allTag {
+    width: 420px;
+}
+
+.add .multi_edit .styled-select {
+    border: 1px solid #d9d9d9;
+    float: left;
+    width: 420px;
+    height: 32px;
+    line-height: 32px;
+    background: url(../../../../assets/migu/images/arrow.png) no-repeat right #fff;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.add .multi_edit .styled-select select {
+    color: #666666;
+    background: transparent;
+    width: 420px;
+    padding-left: 10px;
+    font-size: 14px;
+    border: 0px solid #e6e6e6;
+    height: 32px;
+    -webkit-appearance: none; /*for chrome padding-right: 42px;*/
+}
+
+.add .multi_edit .txt {
+    float: left;
+}
+
+.add .multi_edit .txt label {
+    float: left;
+    width: 74px;
+    height: 32px;
+    margin-right: 8px;
+    padding: 0;
+    line-height: 32px;
+    background: #fff;
+}
+
+.add .multi_edit .l {
+    float: left;
+    width: 170px;
+}
+
+.add .multi_edit .r {
+    /*float: right;*/
+    margin-left: 40px;
+    width: 300px;
+}
+
+.add .multi_edit .small-select {
+    border: 1px solid #d9d9d9;
+    float: left;
+    width: 72px;
+    height: 32px;
+    line-height: 32px;
+    background: url(../../../../assets/migu/images/arrow.png) no-repeat right #fff;
+    overflow: hidden;
+}
+
+.add .multi_edit .small-select select {
+    color: #666666;
+    background: transparent;
+    width: 72px;
+    padding-left: 10px;
+    font-size: 14px;
+    border: 0px solid #e6e6e6;
+    height: 32px;
+    -webkit-appearance: none; /*for chrome padding-right: 42px;*/
+}
+
+.selectlist {
+    height: 400px;
+    margin-bottom: 10px;
+}
+
+.upload .list {
+    margin: 0;
+    border: 0px solid #ddd;
+    height: auto;
+    /*min-height: 350px;*/
+}
+
+.upload .list dd {
+    position: relative;
+    float: left;
+    width: 100%;
+/ / line-height: 96 px;
+    min-height: 96px;
+    height: auto;
+    text-align: left;
+    border-bottom: 2px solid #dddddd;
+/ / background: #ddd;
+    /*border: 1px solid #dddddd;*/
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.upload .list .d2 {
+    float: left;
+    margin-left: 20px;
+    text-align: left;
+}
+
+#uploadlist .item_title {
+    line-height: 96px;
+    height: 96px;
+    clear: both;
+    width: 100%; /*background: #ccc;*/
+}
+
+#uploadlist .item_title .l1 {
+    float: left;
+    margin-left: 48px;
+    width: 90%;
+    text-align: right;
+    line-height: 32px;
+    /*height: 32px;*/
+    padding-top: 12px;
+}
+
+#uploadlist .item_title .l1 .i2 {
+    float: left;
+    width: 70%;
+    text-align: left;
+}
+
+#uploadlist .item_title #file_name {
+    max-width: 70%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+#uploadlist .item_title .l2 {
+    float: left;
+    margin-left: 20px;
+    width: 100%;
+    text-align: left;
+    line-height: 32px;
+    height: 32px;
+}
+
+#uploadlist .item_title .l3 {
+    float: left;
+    margin-left: 48px;
+    width: 90%;
+    text-align: left;
+    line-height: 32px;
+    height: 32px;
+    margin-top: -5px;
+}
+
+#uploadlist .info_slide {
+    clear: both;
+    padding: 0 10px 10px 10px; /*border: 1px solid #dddddd;*/
+    background: #fff;
+}
+
+#uploadlist .info_slide li {
+    line-height: 32px;
+    height: 32px;
+    margin-top: 8px;
+    clear: both;
+    width: 100%;
+}
+
+#uploadlist .info_slide .i1 {
+    float: left;
+    width: 90px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+#uploadlist .info_slide #file_name {
+    max-width: 50%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+#uploadlist .info_slide #tags {
+    width: 212px;
+}
+
+#uploadlist .info_slide .txt {
+    float: left;
+}
+
+#uploadlist .info_slide .l {
+    float: left;
+}
+
+#uploadlist .info_slide .r {
+    float: right;
+    margin-left: 40px;
+    width: 346px;
+}
+
+#uploadlist .item_title .size {
+    font-size: 14px;
+    color: #333333;
+    margin-left: 15px;
+    float: right;
+    text-align: right;
+}
+
+#uploadlist .item_title .state {
+    font-size: 14px;
+    color: #808080;
+    margin-left: 30px;
+    float: left;
+    margin-top: 3px;
+}
+
+#uploadlist .item_title .progress { /*border: 1px solid #ddd;*/
+    background: #ddd;
+    width: 90%;
+    height: 8px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    color: #6dbfff;
+    position: relative;
+    margin-right: 10px;
+}
+
+#uploadlist .item_title .progress span.percentage {
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #feb700;
+    position: absolute;
+}
+
+#uploadlist .item_title .orange {
+    background: #feb700;
+    cursor: pointer;
+}
+
+#uploadlist .item_title .progress span.red {
+    background: #eb6743;
+}
+
+#uploadlist .item_title .progress span.green {
+    background: #5ecf2c;
+}
+
+#uploadlist .item_title .yellow {
+    color: #feb700;
+}
+
+#uploadlist div i.fa { /*position: absolute; top: 16px; left: 12px;*/
+    font-size: 18px;
+    color: #595959;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#uploadlist div i.fa-chevron-down { /*right: 138px; left: auto;*/
+    font-size: 16px;
+}
+
+#uploadlist div.open i.fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#popupLayer_myAddPopup .multi_edit .multi_btns {
+    width: 100%;
+    text-align: center;
+}
+
+#popupLayer_myAddPopup .multi_edit a.button {
+    width: 86px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    background-color: #f2b602;
+    color: #fff;
+}
+
+#popupLayer_myAddPopup .multi_edit a.ok {
+    margin: 0 auto;
+    float: none;
+}
+
+#popupLayer_myAddPopup .multi_edit a.cancel {
+    margin-left: 30px;
+}
+
+#popupLayer_myAddPopup .multi_edit .transcode_type a.button {
+    width: 70px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    margin-right: 17px;
+}
+
+#popupLayer_myAddPopup .multi_edit .transcode_type a.button[value='1'] {
+    background: #fff;
+    border: 1px solid #f2b602;
+    color: #f2b602;
+}
+
+#popupLayer_myAddPopup .multi_edit .transcode_type a.button[value='0'] {
+    background: #fff;
+    border: 1px solid #aaa;
+    color: #D8D1D1;
+}
+
+#popupLayer_myAddPopup .info_slide .transcode_type a.button {
+    width: 70px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    margin-right: 17px;
+}
+
+#popupLayer_myAddPopup .info_slide .transcode_type a.button[value='1'] {
+    background: #fff;
+    border: 1px solid #f2b602;
+    color: #f2b602;
+}
+
+#popupLayer_myAddPopup .info_slide .transcode_type a.button[value='0'] {
+    background: #fff;
+    border: 1px solid #aaa;
+    color: #D8D1D1;
+}
+
+#myDelBatchDiv {
+    display: none;
+}
+
+.myDelBatchDiv {
+    height: 80px;
+    text-align: center;
+    line-height: 30px;
+    color: #616366;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.myDelBatchDiv p {
+    text-align: center;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+#popupLayer_myBatchDelPopup .popup {
+    width: 437px;
+}
+
+#popupLayer_myBatchDelPopup a.ok {
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+    background: #f2b602;
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    border-radius: 3px;
+    margin-left: 100px;
+}
+
+#popupLayer_myBatchDelPopup a.cancel {
+    width: 98px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #cccccc;
+    color: #333333;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    margin-left: 30px;
+    border-radius: 3px;
+}
+
+#popupLayer_myBatchDelPopup a.cancel:hover {
+    background: #f2b602;
+    border: 1px solid #f2b602;
+    color: #fff;
+}
+
+#popupLayer_myBatchDelPopup .popup-footer {
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+#myUploadDelBatchDiv {
+    display: none;
+}
+
+.myUploadDelBatchDiv {
+    height: 80px;
+    text-align: center;
+    line-height: 30px;
+    color: #616366;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.myUploadDelBatchDiv p {
+    text-align: center;
+    line-height: 30px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+#popupLayer_myUploadBatchDelPopup .popup {
+    width: 437px;
+}
+
+#popupLayer_myUploadBatchDelPopup a.ok {
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+    background: #f2b602;
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    border-radius: 3px;
+    margin-left: 100px;
+}
+
+#popupLayer_myUploadBatchDelPopup a.cancel {
+    width: 98px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #cccccc;
+    color: #333333;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    margin-left: 30px;
+    border-radius: 3px;
+}
+
+#popupLayer_myUploadBatchDelPopup a.cancel:hover {
+    background: #f2b602;
+    border: 1px solid #f2b602;
+    color: #fff;
+}
+
+#popupLayer_myUploadBatchDelPopup .popup-footer {
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+.upload #upload_list .ac {
+    margin-top: 20px;
+    height: 40px;
+    margin-right: 26px;
+}
+
+.upload #upload_list .ac .selectAll{
+    background: #fff;
+    border:1px solid #e6e6e6;
+    width: 16px ;
+    height: 16px;
+    position: relative;
+    margin:0px 10px 0px 20px;
+    float: left;
+}
+.upload #upload_list .ac .selectAll #CheckboxAll {
+    position: absolute;
+    left:-5px ;
+    top: -5px ;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.upload h3 .count {
+    margin-right: 10px;
+    padding: 26px 0 0 0;
+}
+
+.upload #upload_list #uploadListCmds a {
+    color: #333;
+    margin-top: 16px;
+    background-color: #e6e6e6;
+}
+
+.upload #upload_list .upload_head .input-file {
+    margin: 0 0 15px 0 !important;
+    float: right;
+}
+
+.upload #upload_list .upload_head a {
+    color: #fff;
+}
+
+.upload #upload_list .upload_head a.button {
+    width: 146px;
+    height: 39px;
+    line-height: 39px;
+    background: #f2b602;
+    font-size: 15px;
+    border-radius: 3px;
+    text-align: left;
+}
+
+.upload #upload_list .upload_footer .input-file {
+    text-align: center;
+}
+
+.upload #upload_list .upload_footer a {
+    color: #666;
+}
+
+.upload #upload_list .upload_footer a.button {
+    width: 1006px;
+    height: 50px;
+    line-height: 50px;
+    background: #f5f5f5;
+    font-size: 16px;
+    border: 1px dashed #99D3F5;
+    border-radius: 0px;
+    text-align: center;
+}
+
+.upload #upload_list .upload_footer a.button:hover {
+    background: #ccc;
+}
+
+.upload #upload_list .info_slide .transcode_type a.button {
+    width: 70px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    margin-right: 17px;
+    cursor: default;
+    text-decoration: inherit;
+}
+
+.upload #upload_list .info_slide .transcode_type a.button[value='1'] {
+    background: #fff;
+    border: 1px solid #f2b602;
+    color: #f2b602;
+}
+
+.upload #upload_list .info_slide .transcode_type a.button[value='0'] {
+    background: #fff;
+    border: 1px solid #aaa;
+    color: #D8D1D1;
+}
+
+.jstree-default .jstree-node {
+    min-height: 40px;
+    line-height: 40px;
+    margin-left: 30px;
+    min-width: 40px;
+}
+
+.jstree-default .jstree-anchor {
+    line-height: 40px;
+    height: 40px;
+    font-size: 15px;
+}
+
+.jstree-default .jstree-wholerow {
+    height: 40px;
+    border-bottom: 1px solid #888;
+}
+
+.jstree-default .jstree-icon {
+    margin: 8px;
+}
+
+.jstree-contextmenu {
+    z-index: 9999;
+
+}
+
+.fixHeight {
+    height: 800px !important;
+}
+
+li[aria-selected = "true"] > span.jstree-edit {
+    float: right;
+    background: url(../../../../assets/migu/images/edit.png) no-repeat;
+    width: 11px;
+    height: 15px;
+    position: relative;
+    margin-top: 12px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+li[aria-selected = "true"] > span.jstree-remove {
+    float: right;
+    background: url(../../../../assets/migu/images/quickdelete.png) no-repeat;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    margin-top: 14px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.jstree-node .jstree-anchor .jstree-icon {
+    display: none;
+}
+
+.jstree-container-ul > li.jstree-last > div {
+    display: none;
+}
+
+.jstree-container-ul > li.jstree-last > i {
+    display: none;
+}
+
+.jstree-container-ul > li.jstree-last > a {
+    display: none;
+}
+
+.jstree-children .jstree-node[id="9998"] a {
+    margin-left: 20px;
+    margin-top: 4px;
+    width: 120px;
+    height: 31px;
+    line-height: 30px;
+    border: 1px solid #888; /*background: #f2b602;*/
+    color: inherit;
+    display: none;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 3px;
+    float: left;
+}
+
+.jstree-children .jstree-node[id="9998"] a:hover {
+    border: 1px solid #f2b602;
+    background: #f2b602;
+    color: #fff;
+    display: none;
+}
+
+.jstree-children .jstree-node[id="9998"] a.jstree-add {
+    position: relative;
+    display: block;
+}
+
+.jstree-children .jstree-node[id="9998"] a.jstree-add:hover {
+    position: relative;
+    display: block;
+}
+
+.add .btn-select {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 25px;
+    background-color: #f80;
+    font: 14px/20px "Microsoft YaHei";
+    color: #fff;
+}
+
+.add .styled-select .cur-select {
+    color: #333;
+    float: left;
+    padding-left: 14px;
+}
+
+.add .styled-select:hover .cur-select {
+    color: #333;
+}
+
+.add #btn_select {
+    margin-left: 0;
+}
+
+#catalog_select {
+    position: absolute;
+    top: 221px;
+    left: 91px;
+    height: 320px;
+    width: 420px;
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #aaa;
+    z-index: 1003;
+}
+
+#catalog_select ul li {
+    line-height: 40px;
+    height: auto;
+    margin-bottom: 0px;
+}
+
+#catalog_select a.button {
+    width: 115px;
+    height: 30px;
+    line-height: 30px;
+    background: #f2b602;
+    border: 1px solid #f2b602;
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    float: left;
+    border-radius: 3px;
+    margin: 0 0;
+}
+
+#catalog_container {
+    height: 260px;
+    overflow: auto;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+/*弹窗*/
+.popup {
+    border: 0px solid #ccc;
+    background-color: #fff;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.popup-header {
+    text-align: left;
+    height: 48px;
+    line-height: 48px;
+    background-color: #333;
+    position: relative;
+    color: #fff;
+}
+
+.popup-header h2 {
+    font-size: 16px;
+    width: 100%;
+    font-weight: normal;
+}
+
+.popup-header a.close{
+    display: block;
+    background: url(../../../../assets/migu/images/icon_close.png) no-repeat;
+    width: 19px;
+    height: 18px;
+    color: #fff;
+    position: absolute;
+    right: 15px;
+    top: 14px;
+    background-position: 0px 0px;
+}
+.popup-header a.close:hover{
+    background-position: -19px 0px;
+}
+
+.popup-body {
+    width: 100%;
+    padding: 10px 30px 15px 30px;
+}
+
+.popup-footer {
+    text-align: center; /*margin: 0 100px;*/
+    clear: both;
+    overflow: hidden;
+}
+
+#myCatDelDiv {
+    display: none;
+}
+
+.myCatDelDiv {
+    height: 60px;
+    text-align: center;
+    line-height: 30px;
+    color: #616366;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.myCatDelDiv p {
+    text-align: center;
+    line-height: 22px;
+}
+
+#popupLayer_myCatDelPopup a.ok {
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+    background: #f2b602;
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    border-radius: 3px;
+}
+
+#popupLayer_myCatDelPopup a.cancel {
+    width: 98px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #cccccc;
+    color: #333333;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    margin-left: 30px;
+    border-radius: 3px;
+}
+
+#popupLayer_myCatDelPopup a.cancel:hover {
+    background: #f2b602;
+    border: 1px solid #f2b602;
+    color: #fff;
+}
+
+#popupLayer_myCatDelPopup .popup-footer {
+    margin: 20px 100px;
+}
+
+
+/*upload2 css*/
+.blank10 {
+    height: 10px;
+}
+
+.whiteb {
+    background: #fff;
+}
+
+.upload {
+/ / margin-bottom: 10 px;
+    float: left;
+/ / margin-left: 10 px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    width: 100%;
+    background: #ffffff;
+}
+.upload .upload_body {
+    border: 2px dashed #dbdbdb;
+    height: 480px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+/*
+.upload .upload_head {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #cccccc;
+    background:#FFECF5;	!*background: url(../../../../assets/migu/images/title_bg.jpg) repeat-x; *!
+    font-size: 14px;
+    text-indent: 2em;
+}
+*/
+
+.upload h4 {
+    margin: 0px 30px;
+    background: #f6f6f6;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+
+/*.upload .list {
+    margin: 0px 30px 10px 30px;
+    border: 1px solid #ddd;
+    background: #fff;
+    height: 350px;
+}*/
+
+.upload .list dt {
+    clear: both;
+    display: inline;
+    position: relative;
+    float: left;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.upload .list dd {
+    clear: both;
+    line-height: 40px;
+    display: inline;
+    /*position: relative;
+    float: left;
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid #dddddd;*/
+}
+
+.upload .list dd a {
+    text-decoration: none;
+}
+.upload .list dd a img {
+    margin-top: 6px;
+}
+
+.upload .list dd a:hover {
+    /*color: #CC0000;
+    text-decoration: underline;*/
+}
+
+.upload .d1 {
+    float: left;
+    width: 140px;
+}
+
+.upload .d2 {
+    float: left;
+    width: 140px;
+}
+
+.upload .d3 {
+    float: left;
+    width: 100px;
+}
+
+.upload .d4 {
+    float: left;
+    width: 120px;
+}
+
+.upload .d5 {
+    float: left;
+    width: 90px;
+}
+
+.upload .d6 {
+    float: left;
+    width: 140px;
+}
+
+.upload .d7 {
+    float: left;
+    width: 98px;
+}
+
+.upload .d8 {
+    float: left;
+    width: 90px;
+}
+
+.load {
+    background: #efefef;
+    border: 1px solid #e1e3e2;
+    height: 16px;
+    display: block;
+    margin-top: 10px;
+}
+
+.loading {
+    background: url(../../../../assets/migu/images/ico36.png) repeat-x;
+    height: 16px;
+    display: block;
+    line-height: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+.upload .l {
+    float: left;
+}
+
+.upload .r {
+    float: right;
+}
+
+.upload h3 {
+    clear: both;
+    width: 100%;
+    height: 60px;
+    background-color: #e6e6e6;
+}
+
+.upload h3 .add {
+    float: left;
+    margin-left: 30px;
+    font-weight: normal;
+    text-align: left;
+    padding: 16px 0 10px 0;
+}
+
+.upload h3 .add a {
+    padding: 0 5px;
+}
+
+.upload h3 .count {
+    float: right;
+    margin-right: 30px;
+    font-weight: normal;
+    text-align: right;
+    padding: 16px 0 10px 0;
+}
+
+/*添加视频弹出窗*/
+#myAddDiv {
+    display: none;
+}
+
+.selectlist {
+    height: 350px;
+}
+
+.add .popup-body {
+    padding: 0;
+}
+
+.add .header {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    background: #efefef;
+    border-bottom: 1px solid #dadada;
+    text-align: center;
+}
+
+.add .header h3 {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    position: relative;
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0;
+}
+
+.add a {
+    margin-left: 10px;
+}
+
+.add .close {
+    display: block;
+    background: url(../../../../assets/migu/images/icon_close.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 14px;
+}
+.add .close:hover{
+    background-position: -20px 0px;
+}
+
+.add .d1 {
+    float: left;
+    width: 130px;
+}
+
+.add .d2 {
+    float: left;
+    width: 130px;
+}
+
+.add .d3 {
+    float: left;
+    width: 130px;
+}
+
+.add .d4 {
+    float: left;
+    width: 130px;
+}
+
+.add .d5 {
+    float: left;
+    width: 130px;
+}
+
+.add .d6 {
+    float: left;
+    width: 110px;
+}
+
+.add .d7 {
+    float: left;
+    width: 135px;
+}
+
+.add h4 {
+    background: #fff;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.add dd {
+    padding: 0 15px;
+    clear: both;
+    display: inline;
+    position: relative;
+    float: left;
+    /*line-height: 40px;
+    height: 40px;*/
+    text-align: center;
+    /*border-bottom: 1px solid #dddddd;*/
+}
+
+.add .btn {
+    text-align: center;
+   
+    border-top: 1px solid #dadada;
+    height: 76px;
+    line-height: 76px;
+}
+
+.add .btnedit {
+    width: 116px;
+    border: 0;
+    height: 50px;
+    background: url(../../../../assets/migu/images/ico3.png) no-repeat;
+    margin-top: 13px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+/ / font-family: "Microsoft YaHei";
+}
+
+/*取消/*取消弹出框*/
+#myCancelDiv {
+    display: none;
+}
+#myCancelDiv .popup-footer a.ok{
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+    background: #f2b602;
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    border-radius: 3px;
+}
+#myCancelDiv .popup-footer a.cancel{
+    width: 98px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #cccccc;
+    color: #333333;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    float: left;
+    margin-left: 30px;
+    border-radius: 3px;
+}
+
+.cancel p {
+    height: 40px;
+}
+
+.cancel p .ok {
+    margin-left: 87px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.cancel p .cancel {
+    margin-top: 10px;
+}
+
+/*删除/*删除弹出框*/
+#myDelDiv {
+    display: none;
+}
+
+.del p {
+    margin: 15px;
+    text-align: center;
+    color: #000;
+}
+
+.demand {
+    width: 100%;
+    margin: 0 auto;
+    position: relative; /*height: 100%;*/
+    display:flex;
+    display: -webkit-flex; /* Safari */
+}
+
+.input-file {
+    display: inline-block;
+    margin: 0 0 0 0 !important;
+    position: relative;
+}
+
+.input-file:hover {
+/ / background: #ccc;
+}
+
+.input-file input {
+    opacity: 0;
+    filter: alpha(opacity=0);
+/ / font-size: 100 px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+input.textShow {
+    border: 1px solid #fff;
+    background: #fff;
+    font-size: 14px;
+    padding-left: 5px;
+    height: 30px;
+    line-height: 30px;
+}
+
+input.textEdit {
+    border: 1px solid #369;
+    background: #fff;
+    padding-left: 5px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.btnupdate1 {
+    width: 115px;
+    border: 0;
+    height: 28px;
+    background: url(../../../../assets/migu/images/c1.png) no-repeat;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+
+    margin: 20px  0 20px 0;
+}
+
+.btnupdate2 {
+    width: 115px;
+    border: 0;
+    height: 28px;
+    background: url(../../../../assets/migu/images/c2.png) no-repeat;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+
+    margin: 20px 0 20px 0;
+}
+
+.btnupdate3 {
+    width: 115px;
+    border: 0;
+    height: 28px;
+    background: url(../../../../assets/migu/images/c3.png) no-repeat;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+
+    margin: 20px 0 20px 0;
+}
+
+.status_col {
+    color: #fff;
+}
+
+#popupLayer_myCatalogsPopup {
+    display: none;
+    width: 60% !important;
+    height: 90% !important;
+    background: #fff;
+
+}
+
+.jstree-contextmenu {
+    z-index: 9999;
+
+}
+
+.fixHeight {
+    height: 800px !important;
+}
+
+.page {
+    float: left;
+    margin: 20px 0 20px 20px;
+    width: 940px;
+}
+
+/*.upload { border: 1px solid #cccccc; }
+.upload_head { background: none; border:none; border-bottom: 1px solid #cccccc; }*/
+a.button {
+    width: 60px;
+    height: 35px;
+    line-height: 35px;
+    background: #fff;
+    color: #f2b602;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    float: left;
+    /* border-radius: 3px; */
+    margin-right: 10px;
+    border: 1px solid #f2b602;
+}
+a.button[value='0']{
+    background: #fff;
+    border: 1px solid #aaa;
+    color: #D8D1D1;
+}
+
+a.add_catalog {
+    float: right;
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+a.cancel_current {
+    width: 115px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+}
+
+a.cancel_all {
+    margin-left: 10px;
+    width: 158px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+}
+
+a.clear_all {
+    margin-left: 10px;
+    width: 115px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+}
+
+a.btnupdate1 {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+a.btnupdate2 {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+a.btnupdate3 {
+    margin-bottom: 10px;
+}
+
+a.delete_catalog {
+    width: 59px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+#popupLayer_myAddPopup a.button {
+    width: 116px;
+    height: 39px;
+    line-height: 39px;
+    font-size: 16px;
+    background-color: #f2b602;
+    color: #fff;
+}
+
+.del p {
+    height: 40px;
+}
+
+.del p .ok {
+    margin-left: 87px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.del p .cancel {
+    margin-top: 10px;
+}
+/*增加的显示网络css*/
+#netWarning {
+    display: none;
+    top: 0px;
+    padding:10px 20px;
+    position: fixed;
+    height: 40px;
+    background-color:#787878;
+    cursor: pointer;
+    opacity: 0.9;
+    width: auto;
+    left: 40%;
+}
+#netBreak {
+    color: #EE2C2C;
+    position:relative;
+    font-size: large;
+}
+
+.Iconlist{width: 20px;height: 20px;margin-left: 8px;}
+.Iconlist1{
+    background-image: url(../../../../assets/migu/images/menu_list.png) ;
+    background-position:0 0;
+}
+.Iconlist2{
+    background-image: url(../../../../assets/migu/images/menu_list.png) ;
+    background-position:0 -20px;
+}
+.Iconlist3{
+    background-image: url(../../../../assets/migu/images/menu_list.png) ;
+    background-position:0 -40px;
+}
+.Iconlist4{
+    background-image: url(../../../../assets/migu/images/menu_list.png) ;
+    background-position:0 -62px;
+}
+.Iconlistopen{
+    background-position-x:-21px;
+}
+.chevron{
+    width: 12px;
+    height: 10px;
+    margin-top: 8px;
+    margin-left: 180px;
+    background-image: url(../../../../assets/migu/images/taggle.png) ;
+    background-position:0 0px;
+}
+.sidebar li i{ position: absolute; top: 16px; left: 12px; font-size: 18px; color: #595959; -webkit-transition: all 0.4s ease; -o-transition: all 0.4s ease; transition: all 0.4s ease; }
+
+.btn_upload {
+    color: #333;
+    width: 130px;
+    height: 40px;
+    margin: 0 auto;
+    border: 1px solid #efb81a;
+    margin-top: 30px;padding:8px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius: 2px;
+    cursor: pointer;
+}
+.btn_upload #file {
+    height: 40px;
+    width: 130px;
+    position: relative;
+    left: -8px;
+    top: -30px;
+    font-size: 50px;
+    opacity: 0;
+}
+.btn_upload a{
+    color: #333;
+    font-size: 16px;
+}
+.btn_upload:hover{
+    background-color: #efb81a;
+    color: #fff;
+}
+.btn_upload a:hover {
+    color: #fff;
+}
+i{font-style: normal;}
+ul,li,ol{list-style: none;}
+.popup-body>p{text-align: center;}

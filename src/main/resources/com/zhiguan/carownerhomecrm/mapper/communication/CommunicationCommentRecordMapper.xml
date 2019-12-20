@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.communication.CommunicationCommentRecordMapper">
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.communication.CommunicationCommentRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="is_Deleted" jdbcType="CHAR" property="isDeleted" />
+    <result column="create_Operator" jdbcType="VARCHAR" property="createOperator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_Operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_Modify_Time" jdbcType="TIMESTAMP" property="lastModifyTime" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="receive_user_id" jdbcType="BIGINT" property="receiveUserId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="record_id" jdbcType="BIGINT" property="recordId" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="reply_comment_id" jdbcType="BIGINT" property="replyCommentId" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="comment_count" jdbcType="INTEGER" property="commentCount" />
+    <result column="good_count" jdbcType="INTEGER" property="goodCount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, user_id, 
+    receive_user_id, type, record_id, comment, reply_comment_id, ip, comment_count, good_count
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from communication_comment_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from communication_comment_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.communication.CommunicationCommentRecord">
+    insert into communication_comment_record (id, is_Deleted, create_Operator, 
+      create_time, last_Operator, last_Modify_Time, 
+      user_id, receive_user_id, type, 
+      record_id, comment, reply_comment_id, 
+      ip, comment_count, good_count
+      )
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{userId,jdbcType=BIGINT}, #{receiveUserId,jdbcType=BIGINT}, #{type,jdbcType=VARCHAR}, 
+      #{recordId,jdbcType=BIGINT}, #{comment,jdbcType=VARCHAR}, #{replyCommentId,jdbcType=BIGINT}, 
+      #{ip,jdbcType=VARCHAR}, #{commentCount,jdbcType=INTEGER}, #{goodCount,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.communication.CommunicationCommentRecord">
+    insert into communication_comment_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="isDeleted != null">
+        is_Deleted,
+      </if>
+      <if test="createOperator != null">
+        create_Operator,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastOperator != null">
+        last_Operator,
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="receiveUserId != null">
+        receive_user_id,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="recordId != null">
+        record_id,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+      <if test="replyCommentId != null">
+        reply_comment_id,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="commentCount != null">
+        comment_count,
+      </if>
+      <if test="goodCount != null">
+        good_count,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="receiveUserId != null">
+        #{receiveUserId,jdbcType=BIGINT},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null">
+        #{recordId,jdbcType=BIGINT},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="replyCommentId != null">
+        #{replyCommentId,jdbcType=BIGINT},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="commentCount != null">
+        #{commentCount,jdbcType=INTEGER},
+      </if>
+      <if test="goodCount != null">
+        #{goodCount,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.communication.CommunicationCommentRecord">
+    update communication_comment_record
+    <set>
+      <if test="isDeleted != null">
+        is_Deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="receiveUserId != null">
+        receive_user_id = #{receiveUserId,jdbcType=BIGINT},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null">
+        record_id = #{recordId,jdbcType=BIGINT},
+      </if>
+      <if test="comment != null">
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="replyCommentId != null">
+        reply_comment_id = #{replyCommentId,jdbcType=BIGINT},
+      </if>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="commentCount != null">
+        comment_count = #{commentCount,jdbcType=INTEGER},
+      </if>
+      <if test="goodCount != null">
+        good_count = #{goodCount,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.communication.CommunicationCommentRecord">
+    update communication_comment_record
+    set is_Deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      user_id = #{userId,jdbcType=BIGINT},
+      receive_user_id = #{receiveUserId,jdbcType=BIGINT},
+      type = #{type,jdbcType=VARCHAR},
+      record_id = #{recordId,jdbcType=BIGINT},
+      comment = #{comment,jdbcType=VARCHAR},
+      reply_comment_id = #{replyCommentId,jdbcType=BIGINT},
+      ip = #{ip,jdbcType=VARCHAR},
+      comment_count = #{commentCount,jdbcType=INTEGER},
+      good_count = #{goodCount,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.communication.CommunicationCommentRecord" resultMap="BaseResultMap">
+      select *
+      from communication_comment_record
+      WHERE is_Deleted = 'n'
+    <if test="starDate != null and endDate != null" >
+      and create_time BETWEEN #{starDate} and #{endDate}
+    </if>
+    <if test="userId != null" >
+      and user_id = #{userId}
+    </if>
+      order by id
+          limit #{pageStart},#{limit}
+    </select>
+
+
+  <select id="pageListAllSize" parameterType="com.zhiguan.carownerhomecrm.domain.communication.CommunicationCommentRecord" resultType="Integer">
+          select count(1) from communication_comment_record
+          where is_deleted = 'n'
+    </select>
+
+</mapper>

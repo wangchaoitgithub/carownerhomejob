@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry
+            location="D:\work\mvnrepository\mysql\mysql-connector-java\5.1.32\mysql-connector-java-5.1.32.jar"/>
+
+   
+    <context id="carownerhomecrm" targetRuntime="MyBatis3">
+		<!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+	<!--	<commentGenerator type="com.zhiguan.com.zhiguan.carownerhomecrmm.common.generator.MyCommentGenerator">
+        &lt;!&ndash; <property name="suppressDate" value="true" /> &ndash;&gt;
+        &lt;!&ndash; <property name="suppressAllComments" value="true" /> &ndash;&gt;
+    </commentGenerator>-->
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="org.gjt.mm.mysql.Driver"
+                        connectionURL="jdbc:mysql://outonlinesmartlive.mysql.rds.aliyuncs.com:3306/carownerhome"
+                        userId="carownerhometest"
+                        password="Carownerhometest2019">
+        </jdbcConnection>
+
+
+        <!-- java类型解析 -->
+        <!-- 2.默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL
+                和 NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- .生成模型的位置 -->
+        <javaModelGenerator targetPackage="com.zhiguan.carownerhomecrm.domain.search"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- .targetProject:mapper映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="com.zhiguan.carownerhomecrm.mapper.search"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- . targetPackage：mapper接口生成的位置 -->
+        <javaClientGenerator targetPackage="com.zhiguan.carownerhomecrm.mapper.search"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- .要生成的表 -->
+        <table schema="carownerhome" tableName="search_resouce_record" domainObjectName="SearchResouceRecord"
+               enableCountByExample="false" enableUpdateByExample="false"  enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+    
+    </context>
+</generatorConfiguration>

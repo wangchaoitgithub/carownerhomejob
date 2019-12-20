@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.vice.VicePayNumberMapper">
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.vice.VicePayNumber">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="is_Deleted" jdbcType="CHAR" property="isDeleted" />
+    <result column="create_Operator" jdbcType="VARCHAR" property="createOperator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_Operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_Modify_Time" jdbcType="TIMESTAMP" property="lastModifyTime" />
+    <result column="org_id" jdbcType="BIGINT" property="orgId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="vice_number" jdbcType="VARCHAR" property="viceNumber" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="express_name" jdbcType="VARCHAR" property="expressName" />
+    <result column="express_phone" jdbcType="VARCHAR" property="expressPhone" />
+    <result column="express_address" jdbcType="VARCHAR" property="expressAddress" />
+    <result column="pay_money" jdbcType="DOUBLE" property="payMoney" />
+    <result column="pay_we_order_id" jdbcType="VARCHAR" property="payWeOrderId" />
+    <result column="pay_weixin_order_id" jdbcType="VARCHAR" property="payWeixinOrderId" />
+    <result column="pay_weixin_status" jdbcType="VARCHAR" property="payWeixinStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, org_id, 
+    user_id, vice_number, state, express_name, express_phone, express_address, pay_money, 
+    pay_we_order_id, pay_weixin_order_id, pay_weixin_status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from vice_pay_number
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from vice_pay_number
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.vice.VicePayNumber">
+    insert into vice_pay_number (id, is_Deleted, create_Operator, 
+      create_time, last_Operator, last_Modify_Time, 
+      org_id, user_id, vice_number, 
+      state, express_name, express_phone, 
+      express_address, pay_money, pay_we_order_id, 
+      pay_weixin_order_id, pay_weixin_status)
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{orgId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{viceNumber,jdbcType=VARCHAR}, 
+      #{state,jdbcType=VARCHAR}, #{expressName,jdbcType=VARCHAR}, #{expressPhone,jdbcType=VARCHAR}, 
+      #{expressAddress,jdbcType=VARCHAR}, #{payMoney,jdbcType=DOUBLE}, #{payWeOrderId,jdbcType=VARCHAR}, 
+      #{payWeixinOrderId,jdbcType=VARCHAR}, #{payWeixinStatus,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.vice.VicePayNumber">
+    insert into vice_pay_number
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="isDeleted != null">
+        is_Deleted,
+      </if>
+      <if test="createOperator != null">
+        create_Operator,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastOperator != null">
+        last_Operator,
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time,
+      </if>
+      <if test="orgId != null">
+        org_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="viceNumber != null">
+        vice_number,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="expressName != null">
+        express_name,
+      </if>
+      <if test="expressPhone != null">
+        express_phone,
+      </if>
+      <if test="expressAddress != null">
+        express_address,
+      </if>
+      <if test="payMoney != null">
+        pay_money,
+      </if>
+      <if test="payWeOrderId != null">
+        pay_we_order_id,
+      </if>
+      <if test="payWeixinOrderId != null">
+        pay_weixin_order_id,
+      </if>
+      <if test="payWeixinStatus != null">
+        pay_weixin_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="viceNumber != null">
+        #{viceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="expressName != null">
+        #{expressName,jdbcType=VARCHAR},
+      </if>
+      <if test="expressPhone != null">
+        #{expressPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="expressAddress != null">
+        #{expressAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="payMoney != null">
+        #{payMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="payWeOrderId != null">
+        #{payWeOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="payWeixinOrderId != null">
+        #{payWeixinOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="payWeixinStatus != null">
+        #{payWeixinStatus,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.vice.VicePayNumber">
+    update vice_pay_number
+    <set>
+      <if test="isDeleted != null">
+        is_Deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgId != null">
+        org_id = #{orgId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="viceNumber != null">
+        vice_number = #{viceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="expressName != null">
+        express_name = #{expressName,jdbcType=VARCHAR},
+      </if>
+      <if test="expressPhone != null">
+        express_phone = #{expressPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="expressAddress != null">
+        express_address = #{expressAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="payMoney != null">
+        pay_money = #{payMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="payWeOrderId != null">
+        pay_we_order_id = #{payWeOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="payWeixinOrderId != null">
+        pay_weixin_order_id = #{payWeixinOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="payWeixinStatus != null">
+        pay_weixin_status = #{payWeixinStatus,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.vice.VicePayNumber">
+    update vice_pay_number
+    set is_Deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      org_id = #{orgId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
+      vice_number = #{viceNumber,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      express_name = #{expressName,jdbcType=VARCHAR},
+      express_phone = #{expressPhone,jdbcType=VARCHAR},
+      express_address = #{expressAddress,jdbcType=VARCHAR},
+      pay_money = #{payMoney,jdbcType=DOUBLE},
+      pay_we_order_id = #{payWeOrderId,jdbcType=VARCHAR},
+      pay_weixin_order_id = #{payWeixinOrderId,jdbcType=VARCHAR},
+      pay_weixin_status = #{payWeixinStatus,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.vice.VicePayNumber" resultMap="BaseResultMap">
+      select *
+      from vice_pay_number
+      where is_deleted = 'n'
+    <if test="starDate != null and endDate != null" >
+      and create_time BETWEEN #{starDate} and #{endDate}
+    </if>
+    <if test="userId != null" >
+      and user_id =#{userId}
+    </if>
+      order by id
+          limit #{pageStart},#{limit}
+    </select>
+
+
+  <select id="pageListAllSize" parameterType="com.zhiguan.carownerhomecrm.domain.vice.VicePayNumber" resultType="Integer">
+          select count(1) from vice_pay_number
+          where is_deleted = 'n'
+        <if test="starDate != null and endDate != null" >
+          and create_time BETWEEN #{starDate} and #{endDate}
+        </if>
+    </select>
+
+</mapper>

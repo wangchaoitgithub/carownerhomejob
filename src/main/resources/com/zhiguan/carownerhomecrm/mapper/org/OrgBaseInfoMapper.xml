@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.org.OrgBaseInfoMapper">
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.org.OrgBaseInfo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="is_Deleted" jdbcType="CHAR" property="isDeleted" />
+    <result column="create_Operator" jdbcType="VARCHAR" property="createOperator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_Operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_Modify_Time" jdbcType="TIMESTAMP" property="lastModifyTime" />
+    <result column="org_name" jdbcType="VARCHAR" property="orgName" />
+    <result column="org_desc" jdbcType="VARCHAR" property="orgDesc" />
+    <result column="welcome_word" jdbcType="VARCHAR" property="welcomeWord" />
+    <result column="org_type" jdbcType="VARCHAR" property="orgType" />
+    <result column="org_rule" jdbcType="VARCHAR" property="orgRule" />
+    <result column="group_userid" jdbcType="BIGINT" property="groupUserid" />
+    <result column="group_user_phonenum" jdbcType="BIGINT" property="groupUserPhonenum" />
+    <result column="group_user_weixinid" jdbcType="VARCHAR" property="groupUserWeixinid" />
+    <result column="group_if_high_authority" jdbcType="CHAR" property="groupIfHighAuthority" />
+    <result column="manager_userid" jdbcType="BIGINT" property="managerUserid" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="logo_img_url_max" jdbcType="VARCHAR" property="logoImgUrlMax" />
+    <result column="logo_img_url_min" jdbcType="VARCHAR" property="logoImgUrlMin" />
+    <result column="weixin_public_id" jdbcType="VARCHAR" property="weixinPublicId" />
+    <result column="weixin_public_name" jdbcType="VARCHAR" property="weixinPublicName" />
+    <result column="weixin_public_logo" jdbcType="VARCHAR" property="weixinPublicLogo" />
+    <result column="weixin_public_http_url" jdbcType="VARCHAR" property="weixinPublicHttpUrl" />
+    <result column="person_count_auth" jdbcType="INTEGER" property="personCountAuth" />
+    <result column="person_count_read" jdbcType="INTEGER" property="personCountRead" />
+    <result column="is_default" jdbcType="CHAR" property="isDefault" />
+    <result column="car_type_id" jdbcType="VARCHAR" property="carTypeId" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="vice_number_min" jdbcType="INTEGER" property="viceNumberMin" />
+    <result column="vice_number_max" jdbcType="INTEGER" property="viceNumberMax" />
+    <result column="bak1" jdbcType="VARCHAR" property="bak1" />
+    <result column="bak2" jdbcType="VARCHAR" property="bak2" />
+    <result column="bak3" jdbcType="VARCHAR" property="bak3" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, org_name, 
+    org_desc, welcome_word, org_type, org_rule, group_userid, group_user_phonenum, group_user_weixinid, 
+    group_if_high_authority, manager_userid, province, city, logo_img_url_max, logo_img_url_min, 
+    weixin_public_id, weixin_public_name, weixin_public_logo, weixin_public_http_url, 
+    person_count_auth, person_count_read, is_default, car_type_id, state, vice_number_min, 
+    vice_number_max, bak1, bak2, bak3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from org_base_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from org_base_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.org.OrgBaseInfo">
+    insert into org_base_info (id, is_Deleted, create_Operator, 
+      create_time, last_Operator, last_Modify_Time, 
+      org_name, org_desc, welcome_word, 
+      org_type, org_rule, group_userid, 
+      group_user_phonenum, group_user_weixinid, group_if_high_authority, 
+      manager_userid, province, city, 
+      logo_img_url_max, logo_img_url_min, weixin_public_id, 
+      weixin_public_name, weixin_public_logo, weixin_public_http_url, 
+      person_count_auth, person_count_read, is_default, 
+      car_type_id, state, vice_number_min, 
+      vice_number_max, bak1, bak2, 
+      bak3)
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{orgName,jdbcType=VARCHAR}, #{orgDesc,jdbcType=VARCHAR}, #{welcomeWord,jdbcType=VARCHAR}, 
+      #{orgType,jdbcType=VARCHAR}, #{orgRule,jdbcType=VARCHAR}, #{groupUserid,jdbcType=BIGINT}, 
+      #{groupUserPhonenum,jdbcType=BIGINT}, #{groupUserWeixinid,jdbcType=VARCHAR}, #{groupIfHighAuthority,jdbcType=CHAR}, 
+      #{managerUserid,jdbcType=BIGINT}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{logoImgUrlMax,jdbcType=VARCHAR}, #{logoImgUrlMin,jdbcType=VARCHAR}, #{weixinPublicId,jdbcType=VARCHAR}, 
+      #{weixinPublicName,jdbcType=VARCHAR}, #{weixinPublicLogo,jdbcType=VARCHAR}, #{weixinPublicHttpUrl,jdbcType=VARCHAR}, 
+      #{personCountAuth,jdbcType=INTEGER}, #{personCountRead,jdbcType=INTEGER}, #{isDefault,jdbcType=CHAR}, 
+      #{carTypeId,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{viceNumberMin,jdbcType=INTEGER}, 
+      #{viceNumberMax,jdbcType=INTEGER}, #{bak1,jdbcType=VARCHAR}, #{bak2,jdbcType=VARCHAR}, 
+      #{bak3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.org.OrgBaseInfo">
+    insert into org_base_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="isDeleted != null">
+        is_Deleted,
+      </if>
+      <if test="createOperator != null">
+        create_Operator,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastOperator != null">
+        last_Operator,
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time,
+      </if>
+      <if test="orgName != null">
+        org_name,
+      </if>
+      <if test="orgDesc != null">
+        org_desc,
+      </if>
+      <if test="welcomeWord != null">
+        welcome_word,
+      </if>
+      <if test="orgType != null">
+        org_type,
+      </if>
+      <if test="orgRule != null">
+        org_rule,
+      </if>
+      <if test="groupUserid != null">
+        group_userid,
+      </if>
+      <if test="groupUserPhonenum != null">
+        group_user_phonenum,
+      </if>
+      <if test="groupUserWeixinid != null">
+        group_user_weixinid,
+      </if>
+      <if test="groupIfHighAuthority != null">
+        group_if_high_authority,
+      </if>
+      <if test="managerUserid != null">
+        manager_userid,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="logoImgUrlMax != null">
+        logo_img_url_max,
+      </if>
+      <if test="logoImgUrlMin != null">
+        logo_img_url_min,
+      </if>
+      <if test="weixinPublicId != null">
+        weixin_public_id,
+      </if>
+      <if test="weixinPublicName != null">
+        weixin_public_name,
+      </if>
+      <if test="weixinPublicLogo != null">
+        weixin_public_logo,
+      </if>
+      <if test="weixinPublicHttpUrl != null">
+        weixin_public_http_url,
+      </if>
+      <if test="personCountAuth != null">
+        person_count_auth,
+      </if>
+      <if test="personCountRead != null">
+        person_count_read,
+      </if>
+      <if test="isDefault != null">
+        is_default,
+      </if>
+      <if test="carTypeId != null">
+        car_type_id,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="viceNumberMin != null">
+        vice_number_min,
+      </if>
+      <if test="viceNumberMax != null">
+        vice_number_max,
+      </if>
+      <if test="bak1 != null">
+        bak1,
+      </if>
+      <if test="bak2 != null">
+        bak2,
+      </if>
+      <if test="bak3 != null">
+        bak3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgName != null">
+        #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgDesc != null">
+        #{orgDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="welcomeWord != null">
+        #{welcomeWord,jdbcType=VARCHAR},
+      </if>
+      <if test="orgType != null">
+        #{orgType,jdbcType=VARCHAR},
+      </if>
+      <if test="orgRule != null">
+        #{orgRule,jdbcType=VARCHAR},
+      </if>
+      <if test="groupUserid != null">
+        #{groupUserid,jdbcType=BIGINT},
+      </if>
+      <if test="groupUserPhonenum != null">
+        #{groupUserPhonenum,jdbcType=BIGINT},
+      </if>
+      <if test="groupUserWeixinid != null">
+        #{groupUserWeixinid,jdbcType=VARCHAR},
+      </if>
+      <if test="groupIfHighAuthority != null">
+        #{groupIfHighAuthority,jdbcType=CHAR},
+      </if>
+      <if test="managerUserid != null">
+        #{managerUserid,jdbcType=BIGINT},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="logoImgUrlMax != null">
+        #{logoImgUrlMax,jdbcType=VARCHAR},
+      </if>
+      <if test="logoImgUrlMin != null">
+        #{logoImgUrlMin,jdbcType=VARCHAR},
+      </if>
+      <if test="weixinPublicId != null">
+        #{weixinPublicId,jdbcType=VARCHAR},
+      </if>
+      <if test="weixinPublicName != null">
+        #{weixinPublicName,jdbcType=VARCHAR},
+      </if>
+      <if test="weixinPublicLogo != null">
+        #{weixinPublicLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="weixinPublicHttpUrl != null">
+        #{weixinPublicHttpUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="personCountAuth != null">
+        #{personCountAuth,jdbcType=INTEGER},
+      </if>
+      <if test="personCountRead != null">
+        #{personCountRead,jdbcType=INTEGER},
+      </if>
+      <if test="isDefault != null">
+        #{isDefault,jdbcType=CHAR},
+      </if>
+      <if test="carTypeId != null">
+        #{carTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="viceNumberMin != null">
+        #{viceNumberMin,jdbcType=INTEGER},
+      </if>
+      <if test="viceNumberMax != null">
+        #{viceNumberMax,jdbcType=INTEGER},
+      </if>
+      <if test="bak1 != null">
+        #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null">
+        #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null">
+        #{bak3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.org.OrgBaseInfo">
+    update org_base_info
+    <set>
+      <if test="isDeleted != null">
+        is_Deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+
+        last_Modify_Time = now(),
+
+      <if test="orgName != null">
+        org_name = #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgDesc != null">
+        org_desc = #{orgDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="welcomeWord != null">
+        welcome_word = #{welcomeWord,jdbcType=VARCHAR},
+      </if>
+      <if test="orgType != null">
+        org_type = #{orgType,jdbcType=VARCHAR},
+      </if>
+      <if test="orgRule != null">
+        org_rule = #{orgRule,jdbcType=VARCHAR},
+      </if>
+      <if test="groupUserid != null">
+        group_userid = #{groupUserid,jdbcType=BIGINT},
+      </if>
+      <if test="groupUserPhonenum != null">
+        group_user_phonenum = #{groupUserPhonenum,jdbcType=BIGINT},
+      </if>
+      <if test="groupUserWeixinid != null">
+        group_user_weixinid = #{groupUserWeixinid,jdbcType=VARCHAR},
+      </if>
+      <if test="groupIfHighAuthority != null">
+        group_if_high_authority = #{groupIfHighAuthority,jdbcType=CHAR},
+      </if>
+      <if test="managerUserid != null">
+        manager_userid = #{managerUserid,jdbcType=BIGINT},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="logoImgUrlMax != null">
+        logo_img_url_max = #{logoImgUrlMax,jdbcType=VARCHAR},
+      </if>
+      <if test="logoImgUrlMin != null">
+        logo_img_url_min = #{logoImgUrlMin,jdbcType=VARCHAR},
+      </if>
+      <if test="weixinPublicId != null">
+        weixin_public_id = #{weixinPublicId,jdbcType=VARCHAR},
+      </if>
+      <if test="weixinPublicName != null">
+        weixin_public_name = #{weixinPublicName,jdbcType=VARCHAR},
+      </if>
+      <if test="weixinPublicLogo != null">
+        weixin_public_logo = #{weixinPublicLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="weixinPublicHttpUrl != null">
+        weixin_public_http_url = #{weixinPublicHttpUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="personCountAuth != null">
+        person_count_auth = #{personCountAuth,jdbcType=INTEGER},
+      </if>
+      <if test="personCountRead != null">
+        person_count_read = #{personCountRead,jdbcType=INTEGER},
+      </if>
+      <if test="isDefault != null">
+        is_default = #{isDefault,jdbcType=CHAR},
+      </if>
+      <if test="carTypeId != null">
+        car_type_id = #{carTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="viceNumberMin != null">
+        vice_number_min = #{viceNumberMin,jdbcType=INTEGER},
+      </if>
+      <if test="viceNumberMax != null">
+        vice_number_max = #{viceNumberMax,jdbcType=INTEGER},
+      </if>
+      <if test="bak1 != null">
+        bak1 = #{bak1,jdbcType=VARCHAR},
+      </if>
+      <if test="bak2 != null">
+        bak2 = #{bak2,jdbcType=VARCHAR},
+      </if>
+      <if test="bak3 != null">
+        bak3 = #{bak3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.org.OrgBaseInfo">
+    update org_base_info
+    set is_Deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      org_name = #{orgName,jdbcType=VARCHAR},
+      org_desc = #{orgDesc,jdbcType=VARCHAR},
+      welcome_word = #{welcomeWord,jdbcType=VARCHAR},
+      org_type = #{orgType,jdbcType=VARCHAR},
+      org_rule = #{orgRule,jdbcType=VARCHAR},
+      group_userid = #{groupUserid,jdbcType=BIGINT},
+      group_user_phonenum = #{groupUserPhonenum,jdbcType=BIGINT},
+      group_user_weixinid = #{groupUserWeixinid,jdbcType=VARCHAR},
+      group_if_high_authority = #{groupIfHighAuthority,jdbcType=CHAR},
+      manager_userid = #{managerUserid,jdbcType=BIGINT},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      logo_img_url_max = #{logoImgUrlMax,jdbcType=VARCHAR},
+      logo_img_url_min = #{logoImgUrlMin,jdbcType=VARCHAR},
+      weixin_public_id = #{weixinPublicId,jdbcType=VARCHAR},
+      weixin_public_name = #{weixinPublicName,jdbcType=VARCHAR},
+      weixin_public_logo = #{weixinPublicLogo,jdbcType=VARCHAR},
+      weixin_public_http_url = #{weixinPublicHttpUrl,jdbcType=VARCHAR},
+      person_count_auth = #{personCountAuth,jdbcType=INTEGER},
+      person_count_read = #{personCountRead,jdbcType=INTEGER},
+      is_default = #{isDefault,jdbcType=CHAR},
+      car_type_id = #{carTypeId,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      vice_number_min = #{viceNumberMin,jdbcType=INTEGER},
+      vice_number_max = #{viceNumberMax,jdbcType=INTEGER},
+      bak1 = #{bak1,jdbcType=VARCHAR},
+      bak2 = #{bak2,jdbcType=VARCHAR},
+      bak3 = #{bak3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <!--查询组织信息-->
+  <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.org.OrgBaseInfo" resultMap="BaseResultMap">
+      select *
+      from org_base_info
+      order by id
+          limit #{pageStart},#{limit}
+    </select>
+
+  <!--查询组织信息条数-->
+  <select id="pageListAllSize" parameterType="com.zhiguan.carownerhomecrm.domain.org.OrgBaseInfo" resultType="Integer">
+          select count(1) from org_base_info
+          where is_deleted = 'n'
+    </select>
+</mapper>

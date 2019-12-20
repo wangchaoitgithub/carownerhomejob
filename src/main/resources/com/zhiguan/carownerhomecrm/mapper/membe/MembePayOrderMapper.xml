@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.membe.MembePayOrderMapper">
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.membe.MembePayOrder">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="is_Deleted" jdbcType="CHAR" property="isDeleted" />
+    <result column="create_Operator" jdbcType="VARCHAR" property="createOperator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_Operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_Modify_Time" jdbcType="TIMESTAMP" property="lastModifyTime" />
+    <result column="org_id" jdbcType="VARCHAR" property="orgId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="pay_money" jdbcType="DOUBLE" property="payMoney" />
+    <result column="product_id" jdbcType="BIGINT" property="productId" />
+    <result column="add_month_count" jdbcType="INTEGER" property="addMonthCount" />
+    <result column="pre_member_date" jdbcType="DATE" property="preMemberDate" />
+    <result column="after_member_date" jdbcType="DATE" property="afterMemberDate" />
+    <result column="pay_we_order_id" jdbcType="VARCHAR" property="payWeOrderId" />
+    <result column="pay_weixin_order_id" jdbcType="VARCHAR" property="payWeixinOrderId" />
+    <result column="pay_weixin_status" jdbcType="VARCHAR" property="payWeixinStatus" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, org_id, 
+    user_id, pay_money, product_id, add_month_count, pre_member_date, after_member_date, 
+    pay_we_order_id, pay_weixin_order_id, pay_weixin_status, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from membe_pay_order
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from membe_pay_order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.membe.MembePayOrder">
+    insert into membe_pay_order (id, is_Deleted, create_Operator, 
+      create_time, last_Operator, last_Modify_Time, 
+      org_id, user_id, pay_money, 
+      product_id, add_month_count, pre_member_date, 
+      after_member_date, pay_we_order_id, pay_weixin_order_id, 
+      pay_weixin_status, status)
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{orgId,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, #{payMoney,jdbcType=DOUBLE}, 
+      #{productId,jdbcType=BIGINT}, #{addMonthCount,jdbcType=INTEGER}, #{preMemberDate,jdbcType=DATE}, 
+      #{afterMemberDate,jdbcType=DATE}, #{payWeOrderId,jdbcType=VARCHAR}, #{payWeixinOrderId,jdbcType=VARCHAR}, 
+      #{payWeixinStatus,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.membe.MembePayOrder">
+    insert into membe_pay_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="isDeleted != null">
+        is_Deleted,
+      </if>
+      <if test="createOperator != null">
+        create_Operator,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastOperator != null">
+        last_Operator,
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time,
+      </if>
+      <if test="orgId != null">
+        org_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="payMoney != null">
+        pay_money,
+      </if>
+      <if test="productId != null">
+        product_id,
+      </if>
+      <if test="addMonthCount != null">
+        add_month_count,
+      </if>
+      <if test="preMemberDate != null">
+        pre_member_date,
+      </if>
+      <if test="afterMemberDate != null">
+        after_member_date,
+      </if>
+      <if test="payWeOrderId != null">
+        pay_we_order_id,
+      </if>
+      <if test="payWeixinOrderId != null">
+        pay_weixin_order_id,
+      </if>
+      <if test="payWeixinStatus != null">
+        pay_weixin_status,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="payMoney != null">
+        #{payMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="productId != null">
+        #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="addMonthCount != null">
+        #{addMonthCount,jdbcType=INTEGER},
+      </if>
+      <if test="preMemberDate != null">
+        #{preMemberDate,jdbcType=DATE},
+      </if>
+      <if test="afterMemberDate != null">
+        #{afterMemberDate,jdbcType=DATE},
+      </if>
+      <if test="payWeOrderId != null">
+        #{payWeOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="payWeixinOrderId != null">
+        #{payWeixinOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="payWeixinStatus != null">
+        #{payWeixinStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.membe.MembePayOrder">
+    update membe_pay_order
+    <set>
+      <if test="isDeleted != null">
+        is_Deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgId != null">
+        org_id = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="payMoney != null">
+        pay_money = #{payMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="addMonthCount != null">
+        add_month_count = #{addMonthCount,jdbcType=INTEGER},
+      </if>
+      <if test="preMemberDate != null">
+        pre_member_date = #{preMemberDate,jdbcType=DATE},
+      </if>
+      <if test="afterMemberDate != null">
+        after_member_date = #{afterMemberDate,jdbcType=DATE},
+      </if>
+      <if test="payWeOrderId != null">
+        pay_we_order_id = #{payWeOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="payWeixinOrderId != null">
+        pay_weixin_order_id = #{payWeixinOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="payWeixinStatus != null">
+        pay_weixin_status = #{payWeixinStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.membe.MembePayOrder">
+    update membe_pay_order
+    set is_Deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      org_id = #{orgId,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+      pay_money = #{payMoney,jdbcType=DOUBLE},
+      product_id = #{productId,jdbcType=BIGINT},
+      add_month_count = #{addMonthCount,jdbcType=INTEGER},
+      pre_member_date = #{preMemberDate,jdbcType=DATE},
+      after_member_date = #{afterMemberDate,jdbcType=DATE},
+      pay_we_order_id = #{payWeOrderId,jdbcType=VARCHAR},
+      pay_weixin_order_id = #{payWeixinOrderId,jdbcType=VARCHAR},
+      pay_weixin_status = #{payWeixinStatus,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.membe.MembePayOrder" resultMap="BaseResultMap">
+      select *
+      from membe_pay_order
+      where is_deleted = 'n'
+    <if test="starDate != null and endDate != null" >
+      and create_time BETWEEN #{starDate} and #{endDate}
+    </if>
+    <if test="payWeOrderId != null" >
+      and pay_we_order_id = #{payWeOrderId}
+    </if>
+    <if test="payWeixinOrderId != null" >
+      and pay_weixin_order_id =#{payWeixinOrderId}
+    </if>
+      order by id
+          limit #{pageStart},#{limit}
+    </select>
+
+  <select id="pageListAllSize" parameterType="com.zhiguan.carownerhomecrm.domain.membe.MembePayOrder" resultType="Integer">
+          select count(1) from membe_pay_order
+          where is_deleted = 'n'
+        <if test="starDate != null and endDate != null" >
+          and create_time BETWEEN #{starDate} and #{endDate}
+        </if>
+    </select>
+</mapper>

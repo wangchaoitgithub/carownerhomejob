@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.configuration.xmlreload" value="true"/>
+	<!-- 设置常量 上传文件大小最大值，系统默认是2M，此设置为10M（1024*1024*10=10485760） -->
+	<constant name="struts.multipart.maxSize" value="10485760" />
+	<!-- 开发模式 -->
+	<constant name="struts.devMode" value="false"/>
+	<!-- struts的URL扩展名 -->
+ 	<constant name="struts.action.extension" value="do" />
+	 
+	 <package name="base" namespace="/base" extends="struts-default">
+	    <action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.base.{1}Action">
+		</action>
+	 </package>
+	 
+	 <package name="order" namespace="/order" extends="struts-default">
+	    <action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.order.{1}Action">
+		</action>
+	 </package>
+	 
+	 <package name="customer" namespace="/customer" extends="struts-default">
+	    <action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.customer.{1}Action">
+		</action>
+	 </package>
+	 
+	 <package name="phone" namespace="/phone" extends="struts-default">
+	    <action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.phone.{1}Action">
+		</action>
+	 </package>
+
+	<package name="user" namespace="/user" extends="struts-default">
+		<action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.user.{1}Action">
+		</action>
+	</package>
+
+	<package name="org" namespace="/org" extends="struts-default">
+		<action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.org.{1}Action">
+		</action>
+	</package>
+
+	<package name="secret" namespace="/secret" extends="struts-default">
+		<action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.secret.{1}Action">
+		</action>
+	</package>
+
+	<package name="membe" namespace="/membe" extends="struts-default">
+		<action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.membe.{1}Action">
+		</action>
+	</package>
+
+	<package name="communication" namespace="/communication" extends="struts-default">
+		<action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.communication.{1}Action">
+		</action>
+	</package>
+
+	<package name="vice" namespace="/vice" extends="struts-default">
+		<action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.vice.{1}Action">
+		</action>
+	</package>
+
+	<package name="process" namespace="/process" extends="struts-default">
+		<action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.process.{1}Action">
+		</action>
+	</package>
+
+	<package name="search" namespace="/search" extends="struts-default">
+		<action name="*_*" method="{2}" class="com.zhiguan.carownerhomecrm.action.search.{1}Action">
+		</action>
+	</package>
+</struts>

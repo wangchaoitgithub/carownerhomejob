@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiguan.carownerhomecrm.mapper.vice.ViceSeeRecordMapper">
+  <resultMap id="BaseResultMap" type="com.zhiguan.carownerhomecrm.domain.vice.ViceSeeRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="is_Deleted" jdbcType="CHAR" property="isDeleted" />
+    <result column="create_Operator" jdbcType="VARCHAR" property="createOperator" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_Operator" jdbcType="VARCHAR" property="lastOperator" />
+    <result column="last_Modify_Time" jdbcType="TIMESTAMP" property="lastModifyTime" />
+    <result column="org_id" jdbcType="BIGINT" property="orgId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="receive_user_id" jdbcType="BIGINT" property="receiveUserId" />
+    <result column="vice_number" jdbcType="VARCHAR" property="viceNumber" />
+    <result column="car_photo_url" jdbcType="VARCHAR" property="carPhotoUrl" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, org_id, 
+    user_id, receive_user_id, vice_number, car_photo_url
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from vice_see_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from vice_see_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zhiguan.carownerhomecrm.domain.vice.ViceSeeRecord">
+    insert into vice_see_record (id, is_Deleted, create_Operator, 
+      create_time, last_Operator, last_Modify_Time, 
+      org_id, user_id, receive_user_id, 
+      vice_number, car_photo_url)
+    values (#{id,jdbcType=BIGINT}, #{isDeleted,jdbcType=CHAR}, #{createOperator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastOperator,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP}, 
+      #{orgId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{receiveUserId,jdbcType=BIGINT}, 
+      #{viceNumber,jdbcType=VARCHAR}, #{carPhotoUrl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhiguan.carownerhomecrm.domain.vice.ViceSeeRecord">
+    insert into vice_see_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="isDeleted != null">
+        is_Deleted,
+      </if>
+      <if test="createOperator != null">
+        create_Operator,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastOperator != null">
+        last_Operator,
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time,
+      </if>
+      <if test="orgId != null">
+        org_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="receiveUserId != null">
+        receive_user_id,
+      </if>
+      <if test="viceNumber != null">
+        vice_number,
+      </if>
+      <if test="carPhotoUrl != null">
+        car_photo_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="receiveUserId != null">
+        #{receiveUserId,jdbcType=BIGINT},
+      </if>
+      <if test="viceNumber != null">
+        #{viceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="carPhotoUrl != null">
+        #{carPhotoUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhiguan.carownerhomecrm.domain.vice.ViceSeeRecord">
+    update vice_see_record
+    <set>
+      <if test="isDeleted != null">
+        is_Deleted = #{isDeleted,jdbcType=CHAR},
+      </if>
+      <if test="createOperator != null">
+        create_Operator = #{createOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastOperator != null">
+        last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null">
+        last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgId != null">
+        org_id = #{orgId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="receiveUserId != null">
+        receive_user_id = #{receiveUserId,jdbcType=BIGINT},
+      </if>
+      <if test="viceNumber != null">
+        vice_number = #{viceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="carPhotoUrl != null">
+        car_photo_url = #{carPhotoUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhiguan.carownerhomecrm.domain.vice.ViceSeeRecord">
+    update vice_see_record
+    set is_Deleted = #{isDeleted,jdbcType=CHAR},
+      create_Operator = #{createOperator,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_Operator = #{lastOperator,jdbcType=VARCHAR},
+      last_Modify_Time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      org_id = #{orgId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
+      receive_user_id = #{receiveUserId,jdbcType=BIGINT},
+      vice_number = #{viceNumber,jdbcType=VARCHAR},
+      car_photo_url = #{carPhotoUrl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.vice.ViceSeeRecord" resultMap="BaseResultMap">
+      select *
+      from vice_see_record
+      where is_deleted = 'n'
+    <if test="starDate != null and endDate != null" >
+      and create_time BETWEEN #{starDate} and #{endDate}
+    </if>
+    <if test="userId != null" >
+      and user_id =#{userId}
+    </if>
+      order by id
+          limit #{pageStart},#{limit}
+    </select>
+
+
+  <select id="pageListAllSize" parameterType="com.zhiguan.carownerhomecrm.domain.vice.ViceSeeRecord" resultType="Integer">
+          select count(1) from vice_see_record
+          where is_deleted = 'n'
+        <if test="starDate != null and endDate != null" >
+          and create_time BETWEEN #{starDate} and #{endDate}
+        </if>
+    </select>
+
+
+
+</mapper>
