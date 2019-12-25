@@ -87,9 +87,11 @@ var vm = new Vue({
             var payWeixinOrderId = $("#payWeixinOrderId").val();
             var starDate = $("#starDate").val();
             var endDate = $("#endDate").val();
+            var createOperatorCode = $("#createOperator").val();
+            var createOperator = encodeURI(createOperatorCode);
             $("#jqGrid").jqGrid('setGridParam',{
                 postData:{/*'likeName': likeName,*/'payWeOrderId': payWeOrderId,'payWeixinOrderId':payWeixinOrderId,
-                    'starDate':starDate,'endDate':endDate},
+                    'starDate':starDate,'endDate':endDate,'createOperator':createOperator},
                 page:page
             }).trigger("reloadGrid");
         }

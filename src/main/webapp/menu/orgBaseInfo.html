@@ -47,50 +47,207 @@
                                 <span style="color: red;">*</span>
                             </div>
                             <div class="col-sm-10">
-                                <input readonly="readonly"  type="text" class="form-control" v-model="customer.id" placeholder="记录id" />
+                                <input readonly="readonly"  type="text" class="form-control" v-model="customer.id" style="width: 250px" placeholder="记录id"/>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">新进入者的欢迎语</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.welcomeWord" style="width: 250px" placeholder="新进入者的欢迎语"/>
+                            </div>
+
+                                <div class="col-sm-2 control-label">组织类型</div>
+                                <div class="col-sm-4" >
+<!--                                    <input type="text" class="form-control" v-model="customer.orgType" style="width: 250px" placeholder="组织类型"/>-->
+                                        <select  class="form-control" style="width:250px;" v-model="customer.orgType" >
+                                            <option value="车友会">车友会</option>
+                                            <option value="其他">其他</option>
+                                        </select>
+                                </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">所在省</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.province" style="width: 250px" placeholder="所在省" />
+                            </div>
+
+                            <div class="col-sm-2 control-label">所在城市</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.city" style="width: 250px" placeholder="所在城市" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">关联车友会微信公众号</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.weixinPublicId" style="width: 250px" placeholder="关联车友会微信公众号" />
+                            </div>
+
+                            <div class="col-sm-2 control-label">关联微信公众号logo图地址</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.weixinPublicLogo" style="width: 250px" placeholder="关联微信公众号logo图地址" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">创建人</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.createOperator" style="width: 250px" placeholder="创建人" />
+                            </div>
+
+                            <div class="col-sm-2 control-label">状态</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.state" style="width: 250px" placeholder="状态" />
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-sm-2 control-label">组织名称</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.orgName" style="width: 250px" placeholder="组织名称（车友会名称）" />
+                            </div>
+
+                            <div class="col-sm-2 control-label">群主Id</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.groupUserid" style="width: 250px" placeholder="群主Id" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">群主姓名</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.nickName" style="width: 250px" placeholder="群主姓名" />
+                            </div>
+
+                            <div class="col-sm-2 control-label">群主微信</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.groupUserWeixinid" style="width: 250px" placeholder="群主微信" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">群主是否拥有高权限</div>
+                            <div class="col-sm-4">
+<!--                                <input type="text" class="form-control" v-model="customer.groupIfHighAuthority" style="width: 250px" placeholder="群主是否拥有高权限" />-->
+                                <select  class="form-control" style="width:250px;" v-model="customer.groupIfHighAuthority" >
+                                    <option value="否">否</option>
+                                    <option value="是">是</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-2 control-label">我平台方管理员Id</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.managerUserid" style="width: 250px" placeholder="我平台方管理员Id" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">logo大图片地址</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.logoImgUrlMax" style="width: 250px" placeholder="logo大图片地址" />
+                            </div>
+
+                            <div class="col-sm-2 control-label">关联车友会微信公众号</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.weixinPublicName" style="width: 250px" placeholder="关联车友会微信公众号" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">本组织加入的认证用户多少</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.personCountAuth" style="width: 250px" placeholder="本组织加入的认证用户多少" />
+                            </div>
+
+                            <div class="col-sm-2 control-label">本组织游览用户多少</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.personCountRead" style="width: 250px" placeholder="本组织游览用户多少" />
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">是否是平台默认的车友会</div>
+                            <div class="col-sm-4">
+<!--                                <input type="text" class="form-control" v-model="customer.isDefault" style="width: 250px" placeholder="是否是平台默认的车友会" />-->
+                                <select  class="form-control" style="width:250px;" v-model="customer.isDefault" >
+                                    <option value="否">否</option>
+                                    <option value="是">是</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-2 control-label">本组织关联的车系</div>
+                            <div class="col-sm-4">
+<!--                                <input type="text" class="form-control" v-model="customer.carTypeId" style="width: 250px" placeholder="本组织关联的车系" />-->
+<!--                                <select  class="form-control" style="width:250px;" v-model="customer.carTypeId" >-->
+<!--                                <option value="1">1</option>-->
+<!--                                <option value="2">2</option>-->
+                                    <select id="carTypeId" class="form-control" style="width:250px;" v-model="customer.carTypeId">
+
+
+
+                                </select>
+<!--                                <div class="form-group col-sm-2" style="padding-left: 0;">-->
+<!--                                    <div id="commonId" style="display: none"></div>-->
+<!--                                    <select id="applyName" class="form-control" ></select>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">副牌最小数</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.viceNumberMin" style="width: 250px" placeholder="副牌最小数" />
+                            </div>
+
+                            <div class="col-sm-2 control-label">副牌最大数</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.viceNumberMax" style="width: 250px" placeholder="副牌最大数" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">关联微信公众号主页http地址</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.weixinPublicHttpUrl" style="width: 250px" placeholder="关联微信公众号主页http地址" />
+                            </div>
+
+                            <div class="col-sm-2 control-label">群主手机号</div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" v-model="customer.groupUserPhonenum" style="width: 250px" placeholder="群主手机号" />
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-sm-2 control-label">群规</div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" v-model="customer.orgName" placeholder="组织名称" />
+<!--                                <input type="text" class="form-control" v-model="customer.orgRule" placeholder="群规" />-->
+                                <textarea  rows="5" class="form-control"  v-model="customer.orgRule" placeholder="群规" ></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-2 control-label">组织介绍</div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" v-model="customer.orgDesc" placeholder="组织介绍" />
+                             <!-- <input type="text" class="form-control" v-model="customer.orgDesc" placeholder="组织介绍" />-->
+                                <textarea  rows="8" class="form-control"  v-model="customer.orgDesc" placeholder="组织介绍" ></textarea>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-2 control-label">组织类型</div>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" v-model="customer.orgType" placeholder="组织类型" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-2 control-label">群主手机号</div>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" v-model="customer.groupUserPhonenum" placeholder="群主手机号" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-2 control-label">所在城市</div>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" v-model="customer.city" placeholder="所在城市" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-2 control-label">状态</div>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" v-model="customer.state" placeholder="状态" />
-                            </div>
-                        </div>
                         <div class="form-group">
                             <div class="col-sm-2 control-label"></div>
                             <input type="button" class="btn btn-primary" @click="saveOrUpdate" value="确定"/>

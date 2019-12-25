@@ -12,7 +12,7 @@ function rechargeRecord(id) {
             { label: '记录ID', name: 'id', index: "id", width: 30, key: true },
             { label: '创建人', name: 'createOperator',
                 /*formatter:function(cellvalue, options, row)
-                {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')},*/ width: 50
+                {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')},*/ width: 50,hidden:true
             },
             { label: '创建时间', name: 'createTime',formatter:function(cellvalue, options, row)
                 {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')}, width: 50 },
@@ -20,7 +20,9 @@ function rechargeRecord(id) {
             { label: '最后修改时间', name: 'lastModifyTime',formatter:function(cellvalue, options, row)
                 {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')},  width: 50 },
             { label: '发布者的userid', name: 'userId', width: 50 },
+            { label: '发布者的名称', name: 'nickName', width: 50 },
             { label: '接收人的userid', name: 'receiveUserId', width: 50},
+            { label: '接收人的名称', name: 'nickNameReceive', width: 50},
             { label: '悄悄话', name: 'secretWord', width: 50},
             { label: '状态', name: 'status', width: 50}
         ],
@@ -65,7 +67,9 @@ var vm = new Vue({
             userId:null,
             receiveUserId:null,
             secretWord:null,
-            status:null
+            status:null,
+            nickName:null,
+            nickNameReceive:null
         }
     },
     methods: {
@@ -107,12 +111,15 @@ var vm = new Vue({
         reload: function () {       /*根据secretWord查*/
             vm.showList = true;
             var page = $("#jqGrid").jqGrid('getGridParam','page');
-            var secretWord = $("#secretWord").val();
+            var secretWordDecode = $("#secretWord").val();
+            var secretWord = encodeURI(secretWordDecode);
             var operatorsId = $("#nameSimple option:selected").val();
             var starDate = $("#starDate").val();
             var endDate = $("#endDate").val();
+            var userId = $("#userId").val();
+            var receiveUserId = $("#receiveUserId").val();
             $("#jqGrid").jqGrid('setGridParam',{
-                postData:{'secretWord': secretWord,'starDate':starDate,'endDate':endDate},
+                postData:{'secretWord': secretWord,'starDate':starDate,'endDate':endDate,'userId':userId,'receiveUserId':receiveUserId},
                 page:page
             }).trigger("reloadGrid");
         },

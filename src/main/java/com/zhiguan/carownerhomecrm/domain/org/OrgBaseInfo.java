@@ -77,6 +77,22 @@ public class OrgBaseInfo {
     private int limit;
     private int currPage;
 
+    private String nickName;
+
+    private String typeName;
+
+
+
+
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
     public String getLikeName() {
         return likeName;
     }
@@ -379,5 +395,13 @@ public class OrgBaseInfo {
 
     public void setBak3(String bak3) {
         this.bak3 = bak3 == null ? null : bak3.trim();
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 }

@@ -36,6 +36,10 @@
     <result column="bak1" jdbcType="VARCHAR" property="bak1" />
     <result column="bak2" jdbcType="VARCHAR" property="bak2" />
     <result column="bak3" jdbcType="VARCHAR" property="bak3" />
+
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+
   </resultMap>
   <sql id="Base_Column_List">
     id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, org_name, 
@@ -437,11 +441,20 @@
 
   <!--查询组织信息-->
   <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.org.OrgBaseInfo" resultMap="BaseResultMap">
-      select *
-      from org_base_info
-      order by id
+      select u.nick_name,o.*
+      from org_base_info o,user_base_info u
+      where o.group_userid = u.id
+      order by id desc
           limit #{pageStart},#{limit}
     </select>
+
+  <!--取顶级车型-->
+  <select id="selectInfo"  resultMap="BaseResultMap" >
+	    SELECT *
+        FROM  common_car_type
+        WHERE level = 1
+        and is_deleted = 'n'
+	</select>
 
   <!--查询组织信息条数-->
   <select id="pageListAllSize" parameterType="com.zhiguan.carownerhomecrm.domain.org.OrgBaseInfo" resultType="Integer">

@@ -156,7 +156,7 @@
   <select id="pageListAll" parameterType="com.zhiguan.carownerhomecrm.domain.search.SearchResouceRecord" resultMap="BaseResultMap">
         SELECT *
          FROM search_resouce_record
-              order by id
+              order by id desc
                   limit #{pageStart},#{limit}
     </select>
 

@@ -9,10 +9,12 @@ import com.zhiguan.carownerhomecrm.mapper.secret.SecretWordRecordMapper;
 import com.zhiguan.carownerhomecrm.service.secret.SecretWordRecordService;
 import com.zhiguan.commonNew.util.DateFormatUtil;
 import com.zhiguan.commonNew.util.StringUtil;
+import com.zhiguan.commonNew.web.UrlUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 public class SecretWordRecordAction extends BaseAction {
@@ -33,6 +35,8 @@ public class SecretWordRecordAction extends BaseAction {
             String secretWord = request.getParameter("secretWord");
             String starDate = request.getParameter("starDate");
             String endDate = request.getParameter("endDate");
+            String receiveUserId = request.getParameter("receiveUserId");
+            String userId = request.getParameter("userId");
 
             if(StringUtil.isEmpty(page)){
                 page = "1";
@@ -46,11 +50,22 @@ public class SecretWordRecordAction extends BaseAction {
             if(!StringUtil.isEmpty(starDate)){
                 entity.setStarDate(DateFormatUtil.timeStringToDate(starDate));
             }
+            if(!StringUtil.isEmpty(userId)){
+                entity.setUserId(Long.parseLong(userId));
+            }
+            if(!StringUtil.isEmpty(receiveUserId)){
+                entity.setReceiveUserId(Long.parseLong(receiveUserId));
+            }
             if(!StringUtil.isEmpty(endDate)){
                 entity.setEndDate(DateFormatUtil.timeStringToDate(endDate));
             }
 
             if(!StringUtil.isEmpty(secretWord)){        //模糊查询
+                try {
+                    secretWord = UrlUtil.decoder(secretWord);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
                 entity.setLikeName(secretWord);
             }
             entity.setCurrPage(Integer.parseInt(page));

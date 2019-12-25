@@ -6,10 +6,12 @@ import com.zhiguan.carownerhomecrm.domain.communication.CommunicationCommentReco
 import com.zhiguan.carownerhomecrm.service.communication.CommunicationCommentRecordService;
 import com.zhiguan.commonNew.util.DateFormatUtil;
 import com.zhiguan.commonNew.util.StringUtil;
+import com.zhiguan.commonNew.web.UrlUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
 
 public class CommunicationCommentRecordAction extends BaseAction {
 
@@ -24,9 +26,10 @@ public class CommunicationCommentRecordAction extends BaseAction {
             String page = request.getParameter("page");
             String limit = request.getParameter("limit");
 //            String likeName = request.getParameter("likeName");
-            String userId = request.getParameter("userId");
+//            String userId = request.getParameter("userId");
             String starDate = request.getParameter("starDate");
             String endDate = request.getParameter("endDate");
+            String nickName = request.getParameter("nickName");
             if(StringUtil.isEmpty(page)){
                 page = "1";
             }
@@ -42,8 +45,13 @@ public class CommunicationCommentRecordAction extends BaseAction {
                 entity.setEndDate(DateFormatUtil.timeStringToDate(endDate));
             }
 
-            if(!StringUtil.isEmpty(userId)){
-                entity.setUserId(Long.parseLong(userId));
+            if(!StringUtil.isEmpty(nickName)){
+                try {
+                    nickName = UrlUtil.decoder(nickName);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                entity.setNickName(nickName);
             }
 //            if(!StringUtil.isEmpty(likeName)){
 //                entity.setLikeName(likeName);

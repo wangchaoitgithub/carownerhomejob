@@ -247,7 +247,10 @@
     <if test="payWeixinOrderId != null" >
       and pay_weixin_order_id =#{payWeixinOrderId}
     </if>
-      order by id
+    <if test="createOperator != null" >
+      and create_operator =#{createOperator}
+    </if>
+      order by id desc
           limit #{pageStart},#{limit}
     </select>
 

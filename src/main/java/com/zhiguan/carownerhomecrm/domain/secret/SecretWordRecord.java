@@ -32,6 +32,25 @@ public class SecretWordRecord {
     private Date starDate;
     private Date endDate;
 
+    private String nickNameReceive;
+    private String nickName;
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getNickNameReceive() {
+        return nickNameReceive;
+    }
+
+    public void setNickNameReceive(String nickNameReceive) {
+        this.nickNameReceive = nickNameReceive;
+    }
+
     public Date getStarDate() {
         return starDate;
     }

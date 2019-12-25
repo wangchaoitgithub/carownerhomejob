@@ -22,4 +22,6 @@ public interface OrgBaseInfoMapper {
 
     /*查询的组织信息条数*/
     int pageListAllSize(OrgBaseInfo enitty);
+
+    List<OrgBaseInfo> selectInfo();
 }

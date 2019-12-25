@@ -10,15 +10,16 @@ function rechargeRecord(customerId) {
         datatype: "json",
         colModel: [
             { label: '记录ID', name: 'id', index: "id", width: 30, key: true },
-            { label: '创建人', name: 'createOperator', width: 50},
+            { label: '创建人', name: 'createOperator', width: 50,hidden:true},
+            { label: '创建人', name: 'nickName', width: 50},
             { label: '创建时间', name: 'createTime',formatter:function(cellvalue, options, row)
                 {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')}, width: 50 },
             { label: '记录最后修改人', name: 'lastOperator' , sortable: false, width: 60 },
             { label: '最后修改时间', name: 'lastModifyTime',formatter:function(cellvalue, options, row)
                 {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')},  width: 50 },
 
-            { label: '创建者id', name: 'userId', width: 50 },
-            { label: '回复的哪个人的id', name: 'receiveUserId', sortable: false, width: 20 },
+            { label: '创建者id', name: 'userId', width: 50,hidden:true },
+            { label: '回复的哪个人的id', name: 'receiveUserId', sortable: false, width: 50 },
             { label: '评论内容', name: 'comment', width: 50 },
             { label: '回复之前评论的id', name: 'replyCommentId', width: 50 },
             { label: 'ip地址', name: 'ip', width: 60},
@@ -68,7 +69,8 @@ var vm = new Vue({
             replyCommentId:null,
             ip:null,
             commentCount:null,
-            goodCount:null
+            goodCount:null,
+            nickName:null
         }
     },
     methods: {
@@ -79,11 +81,13 @@ var vm = new Vue({
             vm.showList = true;
             var page = $("#jqGrid").jqGrid('getGridParam','page');
             var likeName = $(".form-control").val();
+            var nickNameCode = $("#nickName").val();
+            var nickName = encodeURI(nickNameCode);
             var userId = $("#userId").val();
             var starDate = $("#starDate").val();
             var endDate = $("#endDate").val();
             $("#jqGrid").jqGrid('setGridParam',{
-                postData:{'likeName': likeName,'starDate':starDate,'endDate':endDate,'userId':userId},
+                postData:{'likeName': likeName,'starDate':starDate,'endDate':endDate,'userId':userId,'nickName':nickName},
                 page:page
             }).trigger("reloadGrid");
         }

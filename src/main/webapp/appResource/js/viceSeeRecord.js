@@ -12,8 +12,8 @@ function rechargeRecord(customerId) {
             { label: '记录ID', name: 'id', index: "id", width: 30, key: true },
             { label: '创建人', name: 'createOperator', width: 30},
             { label: '创建时间', name: 'createTime',formatter:function(cellvalue, options, row)
-                {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')}, width: 70 },
-            { label: '记录最后修改人', name: 'lastOperator' , sortable: false, width: 40 },
+                {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')}, width: 60 },
+            { label: '记录最后修改人', name: 'lastOperator' , sortable: false, width: 50 },
             { label: '最后修改时间', name: 'lastModifyTime',formatter:function(cellvalue, options, row)
                 {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')},  width: 60 },
             { label: '组织id', name: 'orgId', width: 50 },

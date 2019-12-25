@@ -6,10 +6,12 @@ import com.zhiguan.carownerhomecrm.domain.membe.MembePayOrder;
 import com.zhiguan.carownerhomecrm.service.membe.MembePayOrderService;
 import com.zhiguan.commonNew.util.DateFormatUtil;
 import com.zhiguan.commonNew.util.StringUtil;
+import com.zhiguan.commonNew.web.UrlUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
 
 public class MembePayOrderAction extends BaseAction {
 
@@ -30,6 +32,8 @@ public class MembePayOrderAction extends BaseAction {
             String payWeixinOrderId = request.getParameter("payWeixinOrderId");
             String starDate = request.getParameter("starDate");
             String endDate = request.getParameter("endDate");
+            String createOperator = request.getParameter("createOperator");
+
 
             if(StringUtil.isEmpty(page)){
                 page = "1";
@@ -54,6 +58,14 @@ public class MembePayOrderAction extends BaseAction {
             }
             if(!StringUtil.isEmpty(endDate)){
                 entity.setEndDate(DateFormatUtil.timeStringToDate(endDate));
+            }
+            if(!StringUtil.isEmpty(createOperator)){
+                try {
+                    createOperator = UrlUtil.decoder(createOperator);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                entity.setCreateOperator(createOperator);
             }
             entity.setCurrPage(Integer.parseInt(page));
             entity.setLimit(Integer.parseInt(limit));

@@ -43,6 +43,10 @@ public class CommunicationCommentRecord {
     private Date starDate;
     private Date endDate;
 
+    private String nickName;
+
+
+
     public Date getStarDate() {
         return starDate;
     }
@@ -209,5 +213,13 @@ public class CommunicationCommentRecord {
 
     public void setGoodCount(Integer goodCount) {
         this.goodCount = goodCount;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 }

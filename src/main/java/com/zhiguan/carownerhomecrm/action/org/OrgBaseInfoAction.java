@@ -11,6 +11,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Resource;
+import java.util.Date;
+import java.util.List;
 
 public class OrgBaseInfoAction extends BaseAction {
 
@@ -65,6 +67,26 @@ public class OrgBaseInfoAction extends BaseAction {
             String groupUserPhonenum = request.getParameter("groupUserPhonenum");
             String city = request.getParameter("city");
             String state = request.getParameter("state");
+            String createOperator = request.getParameter("createOperator");
+            String groupUserid = request.getParameter("groupUserid");
+            String nickName = request.getParameter("nickName");
+            String groupUserWeixinid = request.getParameter("groupUserWeixinid");
+            String groupIfHighAuthority = request.getParameter("groupIfHighAuthority");
+            String managerUserid = request.getParameter("managerUserid");
+            String logoImgUrlMax = request.getParameter("logoImgUrlMax");
+            String weixinPublicName = request.getParameter("weixinPublicName");
+            String personCountAuth = request.getParameter("personCountAuth");
+            String personCountRead = request.getParameter("personCountRead");
+            String carTypeId = request.getParameter("carTypeId");
+            String viceNumberMin = request.getParameter("viceNumberMin");
+            String viceNumberMax = request.getParameter("viceNumberMax");
+            String welcomeWord = request.getParameter("welcomeWord");
+            String orgRule = request.getParameter("orgRule");
+            String province = request.getParameter("province");
+            String weixinPublicId = request.getParameter("weixinPublicId");
+            String weixinPublicLogo = request.getParameter("weixinPublicLogo");
+            String weixinPublicHttpUrl = request.getParameter("weixinPublicHttpUrl");
+            String isDefault = request.getParameter("isDefault");
 
             if(StringUtil.isEmpty(id)){
                 this.writeJson("参数错误", false);
@@ -94,12 +116,94 @@ public class OrgBaseInfoAction extends BaseAction {
             if (state != null){
                 orgBaseInfo.setState(state);
             }
-
+            if (createOperator != null){
+                orgBaseInfo.setCreateOperator(createOperator);
+            }
+            if (groupUserid != null){
+                orgBaseInfo.setGroupUserid(Long.parseLong(groupUserid));
+            }
+            if (nickName != null){
+                orgBaseInfo.setNickName(nickName);
+            }
+            if (groupUserWeixinid != null){
+                orgBaseInfo.setGroupUserWeixinid(groupUserWeixinid);
+            }
+            if (groupIfHighAuthority != null){
+                if (groupIfHighAuthority.equals("是")){
+                    orgBaseInfo.setGroupIfHighAuthority("y");
+                }else {
+                    orgBaseInfo.setGroupIfHighAuthority("n");
+                }
+            }
+            if (managerUserid != null){
+                orgBaseInfo.setManagerUserid(Long.parseLong(managerUserid));
+            }
+            if (logoImgUrlMax != null){
+                orgBaseInfo.setLogoImgUrlMax(logoImgUrlMax);
+            }
+            if (weixinPublicName != null){
+                orgBaseInfo.setWeixinPublicName(weixinPublicName);
+            }
+            if (personCountAuth != null){
+                orgBaseInfo.setPersonCountAuth(Integer.parseInt(personCountAuth));
+            }
+            if (personCountRead != null){
+                orgBaseInfo.setPersonCountRead(Integer.parseInt(personCountRead));
+            }
+            if (carTypeId != null){
+                orgBaseInfo.setCarTypeId(carTypeId);
+            }
+            if (viceNumberMin != null){
+                orgBaseInfo.setViceNumberMin(Integer.parseInt(viceNumberMin));
+            }
+            if (viceNumberMax != null){
+                orgBaseInfo.setViceNumberMax(Integer.parseInt(viceNumberMax));
+            }
+            if (welcomeWord != null){
+                orgBaseInfo.setWelcomeWord(welcomeWord);
+            }
+            if (orgRule != null){
+                orgBaseInfo.setOrgRule(orgRule);
+            }
+            if (province != null){
+                orgBaseInfo.setProvince(province);
+            }
+            if (weixinPublicId != null){
+                orgBaseInfo.setWeixinPublicId(weixinPublicId);
+            }
+            if (weixinPublicLogo != null){
+                orgBaseInfo.setWeixinPublicLogo(weixinPublicLogo);
+            }
+            if (weixinPublicHttpUrl != null){
+                orgBaseInfo.setWeixinPublicHttpUrl(weixinPublicHttpUrl);
+            }
+            if (isDefault != null){
+                if (isDefault.equals("是")){
+                    orgBaseInfo.setIsDefault("y");
+                }else {
+                    orgBaseInfo.setIsDefault("n");
+                }
+            }
             int result = orgBaseInfoMapper.updateByPrimaryKeySelective(orgBaseInfo);
             if(result == 1){
                 this.writeJson("修改成功", true);
             }else{
                 this.writeJson("修改失败", false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            this.writeJson("服务异常", false);
+        }
+    }
+
+    public void selectInfo(){
+        try {
+            List<OrgBaseInfo> info = orgBaseInfoMapper.selectInfo();
+            if(info != null && info.size() > 0){
+                this.writeJson(info, true);
+            }else{
+                this.writeJson(null, false);
             }
         } catch (Exception e) {
             e.printStackTrace();
