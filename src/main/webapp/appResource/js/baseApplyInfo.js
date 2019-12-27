@@ -129,7 +129,6 @@ function getOperatorsInfo() {
 	      data: vm.customer,
 	      success: function(r){
 	    	  var text = "<option  value ='' selected>请选择运营商</option>";
-              // alert(r.data);
 	          if(r.success && r.data != null){
 	        	  var operators = r.data;
 	        	  $.each(operators, function(i, info) {

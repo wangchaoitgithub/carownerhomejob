@@ -32,12 +32,73 @@
             <div id="rrapp" v-cloak>
                 <div v-show="showList" class="col-md-10" style="padding: 0;">
                     <div class="grid-btn" style="padding-bottom: 15px;">
+                        <!--查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <select id="orgIds" class="form-control" ></select>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据组织name查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="ido" style="display: none"></div>
+                            <input id="orgId"  class="form-control"  placeholder="用户Id"/>
+                        </div>
+                        <span class="dian">，</span>
                         <!--根据创建者Id查询-->
                         <div class="col-sm-2" style="padding: 0;">
                             <div id="id" style="display: none"></div>
-                            <input id="userId"  class="form-control"  placeholder="创建者Id"/>
+                            <input id="orgName"  class="form-control"  placeholder="组织名称"/>
                         </div>
                         <span class="dian">，</span>
+                        <!--根据创建者Id查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="idn" style="display: none"></div>
+                            <input id="userName"  class="form-control"  placeholder="用户名称"/>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据生成的订单id查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="id1" style="display: none"></div>
+                            <input id="payWeOrderId"  class="form-control"  placeholder="生成的订单id"/>
+                        </div>
+                        <br><br>
+                        <!--根据微信订单id查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="id2" style="display: none"></div>
+                            <input id="payWeixinOrderId"  class="form-control"  placeholder="微信订单id"/>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据选购的副牌号查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="idv" style="display: none"></div>
+                            <input id="viceNumber"  class="form-control"  placeholder="选购的副牌号"/>
+                        </div>
+                        <span class="dian">，</span>
+
+                        <!--根据选购的副牌号查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="idp" style="display: none"></div>
+                            <input id="expressPhone"  class="form-control"  placeholder="快递-手机号"/>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据快递-收件人查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="ide" style="display: none"></div>
+                            <input id="expressName"  class="form-control"  placeholder="快递-收件人"/>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据状态查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="ids" style="display: none"></div>
+                            <!--                            <input id="state"  class="form-control"  placeholder="状态"/>-->
+                            <select  class="form-control"  id="state">
+                                <option value=null>状态查询</option>
+                                <option value="applying">applying</option>
+                                <option value="checkfail">checkfail</option>
+                                <option value="checksucc">checksucc</option>
+                                <option value="checksuccPayDone">checksuccPayDone</option>
+                            </select>
+                        </div><br><br>
+
                         <div class="col-sm-2" style="padding: 0;">
                             <div id="commonId" style="display: none"></div>
                             <input id="starDate"  class="form-control" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="起始时间"/>
@@ -46,6 +107,7 @@
                         <div class="col-sm-2" style="padding: 0;">
                             <input id="endDate" class="form-control" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="截止时间"/>
                         </div>
+
                         <a style="margin-left: 15px" class="btn btn-default" @click="query">查询</a>
                     </div>
                     <table id="jqGrid"></table>

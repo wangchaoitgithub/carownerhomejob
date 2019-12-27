@@ -13,6 +13,9 @@
     <result column="receive_user_id" jdbcType="BIGINT" property="receiveUserId" />
     <result column="vice_number" jdbcType="VARCHAR" property="viceNumber" />
     <result column="car_photo_url" jdbcType="VARCHAR" property="carPhotoUrl" />
+    <result column="org_name" jdbcType="VARCHAR" property="orgName" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="receive_user_name" jdbcType="VARCHAR" property="receiveUserName" />
   </resultMap>
   <sql id="Base_Column_List">
     id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, org_id, 
@@ -163,14 +166,20 @@
   </update>
 
   <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.vice.ViceSeeRecord" resultMap="BaseResultMap">
-      select *
-      from vice_see_record
-      where is_deleted = 'n'
+      select v.*,u.nick_name,o.org_name,ur.nick_name AS receive_user_name
+      from vice_see_record v,org_base_info o,user_base_info u,user_base_info ur
+      where v.is_deleted = 'n'
+      AND v.org_id = o.id
+      AND v.user_id = u.id
+      AND v.receive_user_id = ur.id
     <if test="starDate != null and endDate != null" >
-      and create_time BETWEEN #{starDate} and #{endDate}
+      and v.create_time BETWEEN #{starDate} and #{endDate}
     </if>
     <if test="userId != null" >
-      and user_id =#{userId}
+      and v.user_id =#{userId}
+    </if>
+    <if test="orgId != null" >
+      and v.org_id =#{orgId}
     </if>
       order by id desc
           limit #{pageStart},#{limit}
@@ -185,6 +194,12 @@
         </if>
     </select>
 
+  <select id="selectInfo"  resultMap="BaseResultMap" >
+	    SELECT distinct v.org_id,o.org_name
+        FROM  vice_see_record v,org_base_info o
+        WHERE v.is_deleted = 'n'
+        and v.org_id = o.id
+	</select>
 
 
 </mapper>

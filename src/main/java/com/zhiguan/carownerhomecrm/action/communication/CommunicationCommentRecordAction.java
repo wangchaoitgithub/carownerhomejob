@@ -26,10 +26,14 @@ public class CommunicationCommentRecordAction extends BaseAction {
             String page = request.getParameter("page");
             String limit = request.getParameter("limit");
 //            String likeName = request.getParameter("likeName");
-//            String userId = request.getParameter("userId");
+            String userId = request.getParameter("userId");
             String starDate = request.getParameter("starDate");
             String endDate = request.getParameter("endDate");
             String nickName = request.getParameter("nickName");
+            String receiveUserId = request.getParameter("receiveUserId");
+            String receiveUserName = request.getParameter("receiveUserName");
+            String type = request.getParameter("type");
+
             if(StringUtil.isEmpty(page)){
                 page = "1";
             }
@@ -52,6 +56,25 @@ public class CommunicationCommentRecordAction extends BaseAction {
                     e.printStackTrace();
                 }
                 entity.setNickName(nickName);
+            }
+            if(!StringUtil.isEmpty(userId)){
+                entity.setUserId(Long.parseLong(userId));
+            }
+            if(!StringUtil.isEmpty(receiveUserName)){
+                try {
+                    receiveUserName = UrlUtil.decoder(receiveUserName);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                entity.setReceiveUserName(receiveUserName);
+            }
+            if(!StringUtil.isEmpty(receiveUserId)){
+                entity.setReceiveUserId(Long.parseLong(receiveUserId));
+            }
+            if(!StringUtil.isEmpty(type)){
+                if (!type.equals("null")){
+                    entity.setType(type);
+                }
             }
 //            if(!StringUtil.isEmpty(likeName)){
 //                entity.setLikeName(likeName);

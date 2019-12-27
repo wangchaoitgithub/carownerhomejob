@@ -50,6 +50,63 @@
                             <input id="createOperator"  class="form-control"  placeholder="创建人"/>
                         </div>
                         <span class="dian">，</span>
+
+                        <!--根据创建人id查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="id9" style="display: none"></div>
+                            <input id="userId"  class="form-control"  placeholder="创建人Id"/>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据productId查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="id91" style="display: none"></div>
+                            <input id="productId"  class="form-control"  placeholder="产品Id"/>
+                        </div><br><br>
+                        <!--根据productId查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="id912" style="display: none"></div>
+                            <input id="productName"  class="form-control"  placeholder="产品名称"/>
+                        </div>
+                        <span class="dian">，</span>
+
+                        <!--根据orgId查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="idi" style="display: none"></div>
+                            <input id="orgId"  class="form-control"  placeholder="组织Id"/>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据orgName查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="idn" style="display: none"></div>
+                            <input id="orgName"  class="form-control"  placeholder="组织名称"/>
+                        </div>
+                        <span class="dian">，</span>
+
+                        <!--根据payWeixinStatus查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="id12" style="display: none"></div>
+<!--                            <input id="payWeixinStatus"  class="form-control"  placeholder="微信支付回调状态"/>-->
+                            <select  class="form-control"  id="payWeixinStatus">
+                                <option value=null>请选择微信回调类型</option>
+                                <option value="init">初始化</option>
+                                <option value="fail">失败</option>
+                                <option value="succ">成功</option>
+                            </select>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据status查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="statusA" style="display: none"></div>
+<!--                            <input id="status"  class="form-control"  placeholder="订单类型"/>-->
+                            <select  class="form-control"  id="status">
+                                <option value=null>请选择订单类型</option>
+                                <option value="init">初始化</option>
+                                <option value="fail">失败</option>
+                                <option value="succ">成功</option>
+                            </select>
+                        </div>
+                        <br><br>
+
                         <div class="col-sm-2" style="padding: 0;">
                             <div id="commonId" style="display: none"></div>
                             <input id="starDate"  class="form-control" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="起始时间"/>

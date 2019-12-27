@@ -47,6 +47,11 @@ public class MembePayOrder {
     private Date starDate;
     private Date endDate;
 
+    private String orgName;
+    private String productName;
+
+
+
     public Date getStarDate() {
         return starDate;
     }
@@ -229,5 +234,21 @@ public class MembePayOrder {
 
     public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
+    }
+
+    public String getOrgName() {
+        return orgName;
+    }
+
+    public void setOrgName(String orgName) {
+        this.orgName = orgName;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 }

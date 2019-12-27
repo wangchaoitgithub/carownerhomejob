@@ -88,7 +88,6 @@ public class SecretWordRecordAction extends BaseAction {
             String id = request.getParameter("id");
             String status = request.getParameter("status");
             String secretWord = request.getParameter("secretWord");
-            System.out.println(status);
             if(StringUtil.isEmpty(id)){
                 this.writeJson("参数错误", false);
                 return;

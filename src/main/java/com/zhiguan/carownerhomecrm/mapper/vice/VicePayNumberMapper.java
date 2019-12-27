@@ -23,4 +23,6 @@ public interface VicePayNumberMapper {
 
 
     int pageListAllSize(VicePayNumber enitty);
+
+    List<VicePayNumber> selectInfo();
 }

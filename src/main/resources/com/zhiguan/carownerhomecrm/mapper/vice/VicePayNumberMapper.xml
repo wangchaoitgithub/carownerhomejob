@@ -19,6 +19,8 @@
     <result column="pay_we_order_id" jdbcType="VARCHAR" property="payWeOrderId" />
     <result column="pay_weixin_order_id" jdbcType="VARCHAR" property="payWeixinOrderId" />
     <result column="pay_weixin_status" jdbcType="VARCHAR" property="payWeixinStatus" />
+    <result column="org_name" jdbcType="VARCHAR" property="orgName" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
   </resultMap>
   <sql id="Base_Column_List">
     id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, org_id, 
@@ -235,14 +237,43 @@
 
 
   <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.vice.VicePayNumber" resultMap="BaseResultMap">
-      select *
-      from vice_pay_number
-      where is_deleted = 'n'
+    SELECT v.*,o.org_name,u.nick_name
+    FROM vice_pay_number v,org_base_info o,user_base_info u
+    WHERE v.is_Deleted = 'n'
+    AND v.user_id = u.id
+    and v.org_id = o.id
     <if test="starDate != null and endDate != null" >
-      and create_time BETWEEN #{starDate} and #{endDate}
+      and v.create_time BETWEEN #{starDate} and #{endDate}
     </if>
     <if test="userId != null" >
-      and user_id =#{userId}
+      and v.user_id =#{userId}
+    </if>
+    <if test="nickName != null" >
+      and u.nick_name like concat('%',#{nickName},'%')
+    </if>
+    <if test="orgId != null" >
+      and v.org_id =#{orgId}
+    </if>
+    <if test="orgName != null" >
+      and o.org_name like concat('%',#{orgName},'%')
+    </if>
+    <if test="payWeOrderId != null" >
+      and v.pay_we_order_id = #{payWeOrderId}
+    </if>
+    <if test="payWeixinOrderId != null" >
+      and v.pay_weixin_order_id =#{payWeixinOrderId}
+    </if>
+    <if test="viceNumber != null" >
+      and v.vice_number =#{viceNumber}
+    </if>
+    <if test="expressPhone != null" >
+      and v.express_phone =#{expressPhone}
+    </if>
+    <if test="expressName != null" >
+      and v.express_name like concat('%',#{expressName},'%')
+    </if>
+    <if test="state != null" >
+      and v.state =#{state}
     </if>
       order by id desc
           limit #{pageStart},#{limit}
@@ -257,4 +288,10 @@
         </if>
     </select>
 
+  <select id="selectInfo"  resultMap="BaseResultMap" >
+	    SELECT distinct v.org_id,o.org_name
+        FROM  vice_pay_number v,org_base_info o
+        WHERE v.is_deleted = 'n'
+        and v.org_id = o.id
+	</select>
 </mapper>

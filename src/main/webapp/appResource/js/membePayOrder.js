@@ -10,6 +10,7 @@ function rechargeRecord(customerId) {
         datatype: "json",
         colModel: [
             { label: '记录ID', name: 'id', index: "id", width: 30, key: true },
+            { label: '创建人id', name: 'userId', width: 30},
             { label: '创建人', name: 'createOperator',width: 50 },
             { label: '创建时间', name: 'createTime',formatter:function(cellvalue, options, row)
                 {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')}, width: 50 },
@@ -17,15 +18,16 @@ function rechargeRecord(customerId) {
             // { label: '最后修改时间', name: 'lastModifyTime',formatter:function(cellvalue, options, row)
             //     {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')},  width: 50 },
             { label: '组织id', name: 'orgId', width: 30 },
-            { label: '用户id', name: 'userId', width: 30},
+            { label: '组织名称', name: 'orgName', width: 40},
             { label: '支付的钱', name: 'payMoney', width: 50},
             { label: '产品ID', name: 'productId', width: 40 },
+            { label: '产品名称', name: 'productName', width: 40 },
             { label: '加会员期', name: 'addMonthCount', sortable: false, width: 50 },
-            // { label: '加前的到期日期', name: 'preMemberDate', width: 50 },
+            { label: '加前的到期日期', name: 'preMemberDate', width: 50 },
             { label: '加之后的到期日期', name: 'afterMemberDate', width: 50 },
             { label: '生成的订单id', name: 'payWeOrderId', width: 60},
             { label: '微信订单id', name: 'payWeixinOrderId', width: 60},
-            // { label: '微信支付回调状态', name: 'payWeixinStatus', width: 60},
+            { label: '微信支付回调状态', name: 'payWeixinStatus', width: 60},
             { label: '订单状态', name: 'status', width: 60}
         ],
         viewrecords: true,
@@ -72,6 +74,8 @@ var vm = new Vue({
             afterMemberDate:null,
             payWeOrderId:null,
             payWeixinOrderId:null,
+            orgName:null,
+            productName:null,
             status:null
         }
     },
@@ -89,9 +93,21 @@ var vm = new Vue({
             var endDate = $("#endDate").val();
             var createOperatorCode = $("#createOperator").val();
             var createOperator = encodeURI(createOperatorCode);
+            var userId = $("#userId").val();
+            var productId = $("#productId").val();
+            var productNameCode = $("#productName").val();
+            var productName = encodeURI(productNameCode);
+            var orgNameCode = $("#orgName").val();
+            var orgName = encodeURI(orgNameCode);
+            var payWeixinStatus = $("#payWeixinStatus").val();
+            var status = $("#status").val();
+            var orgId = $("#orgId").val();
             $("#jqGrid").jqGrid('setGridParam',{
                 postData:{/*'likeName': likeName,*/'payWeOrderId': payWeOrderId,'payWeixinOrderId':payWeixinOrderId,
-                    'starDate':starDate,'endDate':endDate,'createOperator':createOperator},
+                    'starDate':starDate,'endDate':endDate,'createOperator':createOperator,'userId':userId
+                    ,'productId':productId,'productName':productName,'payWeixinStatus':payWeixinStatus,'status':status
+                    ,'orgId':orgId,'orgName':orgName
+                },
                 page:page
             }).trigger("reloadGrid");
         }

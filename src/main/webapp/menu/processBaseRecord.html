@@ -35,8 +35,75 @@
                         <!--根据创建者Id查询-->
                         <div class="col-sm-2" style="padding: 0;">
                             <div id="id" style="display: none"></div>
-                            <input id="userId"  class="form-control"  placeholder="创建者Id"/>
+                            <input id="userId"  class="form-control"  placeholder="审核人Id"/>
                         </div>
+                        <span class="dian">，</span>
+
+
+
+                        <!--根据nextCheckUserId查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="idn" style="display: none"></div>
+                            <input id="nextCheckUserId"  class="form-control"  placeholder="下一个审核人Id"/>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据businessType查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="idbt" style="display: none"></div>
+<!--                            <input id="businessType"  class="form-control"  placeholder="业务类型"/>-->
+                            <select  class="form-control"  id="businessType">
+                                <option value=null>审核业务类型</option>
+                                <option value="auth">认证</option>
+                                <option value="userInfoUpdate">用户信息修改</option>
+                                <option value="buyViceNumber">求助</option>
+                                <option value="help">求助</option>
+                                <option value="forum">发帖</option>
+                                <option value="comment">评论</option>
+                                <option value="addGroupActivity">导入群活动</option>
+                            </select>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据result查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="idr" style="display: none"></div>
+<!--                            <input id="result"  class="form-control"  placeholder="审核结果"/>-->
+                            <select  class="form-control"  id="result">
+                                <option value=null>审核结果</option>
+                                <option value="ok">ok</option>
+                                <option value="fail">fail</option>
+                            </select>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据result查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="ids" style="display: none"></div>
+<!--                            <input id="status"  class="form-control"  placeholder="流程状态"/>-->
+                            <select  class="form-control"  id="status">
+                                <option value=null>流程状态</option>
+                                <option value="ing">ing</option>
+                                <option value="end">end</option>
+                                <option value="nulls">空</option>
+                            </select>
+                        </div>
+                        <br><br>
+                        <!--根据result查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="idl" style="display: none"></div>
+                            <input id="lastProcessId"  class="form-control"  placeholder="上一条流程记录的id"/>
+                        </div>
+                        <span class="dian">，</span>
+
+
+
+
+
+                        <!--根据创建者nextCheckUserId查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="idb" style="display: none"></div>
+                            <input id="businessId"  class="form-control"  placeholder="业务id"/>
+                        </div>
+
+
                         <span class="dian">，</span>
                         <div class="col-sm-2" style="padding: 0;">
                             <div id="commonId" style="display: none"></div>

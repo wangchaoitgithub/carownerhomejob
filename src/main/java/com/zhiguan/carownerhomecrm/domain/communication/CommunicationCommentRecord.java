@@ -44,6 +44,8 @@ public class CommunicationCommentRecord {
     private Date endDate;
 
     private String nickName;
+    private String receiveUserName;
+
 
 
 
@@ -221,5 +223,13 @@ public class CommunicationCommentRecord {
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
+    }
+
+    public String getReceiveUserName() {
+        return receiveUserName;
+    }
+
+    public void setReceiveUserName(String receiveUserName) {
+        this.receiveUserName = receiveUserName;
     }
 }

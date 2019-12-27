@@ -48,6 +48,10 @@ public class ProcessBaseRecord {
     private Date starDate;
     private Date endDate;
 
+    private String nickName;
+    private String statusNull;
+
+
     public Date getStarDate() {
         return starDate;
     }
@@ -238,5 +242,21 @@ public class ProcessBaseRecord {
 
     public void setBak3(String bak3) {
         this.bak3 = bak3 == null ? null : bak3.trim();
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getStatusNull() {
+        return statusNull;
+    }
+
+    public void setStatusNull(String statusNull) {
+        this.statusNull = statusNull;
     }
 }

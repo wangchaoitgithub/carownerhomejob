@@ -33,7 +33,13 @@ public class MembePayOrderAction extends BaseAction {
             String starDate = request.getParameter("starDate");
             String endDate = request.getParameter("endDate");
             String createOperator = request.getParameter("createOperator");
-
+            String userId = request.getParameter("userId");
+            String productName = request.getParameter("productName");
+            String productId = request.getParameter("productId");
+            String payWeixinStatus = request.getParameter("payWeixinStatus");
+            String status = request.getParameter("status");
+            String orgName = request.getParameter("orgName");
+            String orgId = request.getParameter("orgId");
 
             if(StringUtil.isEmpty(page)){
                 page = "1";
@@ -47,7 +53,6 @@ public class MembePayOrderAction extends BaseAction {
                 entity.setLikeName(likeName);
             }
             if(!StringUtil.isEmpty(payWeOrderId)){
-                System.out.println(111);
                 entity.setPayWeOrderId(payWeOrderId);
             }
             if(!StringUtil.isEmpty(payWeixinOrderId)){
@@ -66,6 +71,41 @@ public class MembePayOrderAction extends BaseAction {
                     e.printStackTrace();
                 }
                 entity.setCreateOperator(createOperator);
+            }
+            if(!StringUtil.isEmpty(userId)){
+                entity.setUserId(Long.parseLong(userId));
+            }
+            if(!StringUtil.isEmpty(productId)){
+                entity.setProductId(Long.parseLong(productId));
+            }
+            if(!StringUtil.isEmpty(productName)){
+                try {
+                    productName = UrlUtil.decoder(productName);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                entity.setProductName(productName);
+            }
+            if(!StringUtil.isEmpty(payWeixinStatus)){
+                if (!payWeixinStatus.equals("null")){
+                    entity.setPayWeixinStatus(payWeixinStatus);
+                }
+            }
+            if(!StringUtil.isEmpty(status)){
+                if (!status.equals("null")){
+                    entity.setStatus(status);
+                }
+            }
+            if(!StringUtil.isEmpty(orgId)){
+                entity.setOrgId(orgId);
+            }
+            if(!StringUtil.isEmpty(orgName)){
+                try {
+                    orgName = UrlUtil.decoder(orgName);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                entity.setOrgName(orgName);
             }
             entity.setCurrPage(Integer.parseInt(page));
             entity.setLimit(Integer.parseInt(limit));

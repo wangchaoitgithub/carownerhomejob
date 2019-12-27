@@ -47,6 +47,11 @@ public class VicePayNumber {
     private Date starDate;
     private Date endDate;
 
+    private String orgName;
+    private String nickName;
+
+
+
     public Date getStarDate() {
         return starDate;
     }
@@ -229,5 +234,21 @@ public class VicePayNumber {
 
     public void setPayWeixinStatus(String payWeixinStatus) {
         this.payWeixinStatus = payWeixinStatus == null ? null : payWeixinStatus.trim();
+    }
+
+    public String getOrgName() {
+        return orgName;
+    }
+
+    public void setOrgName(String orgName) {
+        this.orgName = orgName;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 }

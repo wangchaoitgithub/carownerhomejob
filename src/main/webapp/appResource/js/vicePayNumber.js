@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var commonId = getCookie("commonId");
     rechargeRecord(commonId);
+    getApplyInfo()
 });
 
 function rechargeRecord(customerId) {
@@ -18,7 +19,9 @@ function rechargeRecord(customerId) {
             //     {return new Date(cellvalue).Format('yyyy-MM-dd hh:mm:ss')},  width: 50 },
 
             { label: '组织id', name: 'orgId', width: 30 },
-            { label: '创建者id', name: 'userId', width: 50 },
+            { label: '组织名称', name: 'orgName', width: 50 },
+            { label: '用户id', name: 'userId', width: 50 },
+            { label: '用户名称', name: 'nickName', width: 50 },
             { label: '选购的副牌号', name: 'viceNumber', width: 50 },
             { label: '状态', name: 'state', width: 60},
             { label: '快递-收件人', name: 'expressName', sortable: false, width: 50 },
@@ -66,12 +69,15 @@ var vm = new Vue({
             userId:null,
             createTime:null,
             orgId:null,
+            state:null,
             viceNumber:null,
             expressName:null,
             expressPhone:null,
             expressAddress:null,
             payMoney:null,
             payWeOrderId:null,
+            orgName:null,
+            nickName:null,
             payWeixinOrderId:null
         }
     },
@@ -84,12 +90,48 @@ var vm = new Vue({
             var page = $("#jqGrid").jqGrid('getGridParam','page');
             // var likeName = $(".form-control").val();
             var userId = $("#userId").val();
+            var userNameCode = $("#userName").val();
+            var userName = encodeURI(userNameCode);
             var starDate = $("#starDate").val();
             var endDate = $("#endDate").val();
+            var orgIds = $("#orgIds").val();
+            var payWeOrderId = $("#payWeOrderId").val();
+            var payWeixinOrderId = $("#payWeixinOrderId").val();
+            var viceNumber = $("#viceNumber").val();
+            var expressPhone = $("#expressPhone").val();
+            var expressNameCode = $("#expressName").val();
+            var expressName = encodeURI(expressNameCode);
+            var state = $("#state").val();
+            var orgNameCode = $("#orgName").val();
+            var orgName = encodeURI(orgNameCode);
             $("#jqGrid").jqGrid('setGridParam',{
-                postData:{/*'likeName': likeName,*/'userId': userId,'starDate':starDate,'endDate':endDate},
+                postData:{/*'likeName': likeName,*/'userId': userId,'starDate':starDate,
+                    'endDate':endDate,'orgIds':orgIds,'payWeOrderId': payWeOrderId,'payWeixinOrderId':payWeixinOrderId
+                    ,'userName':userName,'viceNumber':viceNumber,'expressPhone':expressPhone,'expressName':expressName,
+                    'state':state,'orgName':orgName
+                },
                 page:page
             }).trigger("reloadGrid");
         }
     }
 });
+
+function getApplyInfo() {
+    $.ajax({
+        type: "POST",
+        url: baseURL + "vice/VicePayNumber_selectInfo.do",
+        data: vm.customer,
+        success: function(r) {
+            var text = "<option  value ='' >请选择组织</option>";
+            if (r.success && r.data != null) {
+                var customerInfo = r.data;
+                $.each(customerInfo, function (i, info) {
+                    text += "<option value='" + info.orgId + "'>" + info.orgName + "</option>";
+                })
+                $("#orgIds").html(text);
+            } else {
+                $("#orgIds").html(text);
+            }
+        }
+    });
+}

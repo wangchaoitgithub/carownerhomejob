@@ -23,4 +23,6 @@ public interface ViceSeeRecordMapper {
 
 
     int pageListAllSize(ViceSeeRecord enitty);
+
+    List<ViceSeeRecord> selectInfo();
 }

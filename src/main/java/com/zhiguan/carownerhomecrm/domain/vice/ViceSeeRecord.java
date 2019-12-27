@@ -34,6 +34,34 @@ public class ViceSeeRecord {
     private Date starDate;
     private Date endDate;
 
+    private String orgName;
+    private String nickName;
+    private String receiveUserName;
+
+    public String getOrgName() {
+        return orgName;
+    }
+
+    public void setOrgName(String orgName) {
+        this.orgName = orgName;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getReceiveUserName() {
+        return receiveUserName;
+    }
+
+    public void setReceiveUserName(String receiveUserName) {
+        this.receiveUserName = receiveUserName;
+    }
+
     public Date getStarDate() {
         return starDate;
     }

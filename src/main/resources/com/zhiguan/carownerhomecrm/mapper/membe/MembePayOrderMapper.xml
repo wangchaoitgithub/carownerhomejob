@@ -19,6 +19,8 @@
     <result column="pay_weixin_order_id" jdbcType="VARCHAR" property="payWeixinOrderId" />
     <result column="pay_weixin_status" jdbcType="VARCHAR" property="payWeixinStatus" />
     <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="org_name" jdbcType="VARCHAR" property="orgName" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
   </resultMap>
   <sql id="Base_Column_List">
     id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, org_id, 
@@ -235,20 +237,43 @@
 
 
   <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.membe.MembePayOrder" resultMap="BaseResultMap">
-      select *
-      from membe_pay_order
-      where is_deleted = 'n'
+      select m.*,o.org_name,mp.product_name
+      from membe_pay_order  m , org_base_info o ,member_product_info mp
+      where m.org_id = o.id
+      AND m.product_id = mp.id
+      and m.is_deleted = 'n'
     <if test="starDate != null and endDate != null" >
-      and create_time BETWEEN #{starDate} and #{endDate}
+      and m.create_time BETWEEN #{starDate} and #{endDate}
     </if>
     <if test="payWeOrderId != null" >
-      and pay_we_order_id = #{payWeOrderId}
+      and m.pay_we_order_id = #{payWeOrderId}
     </if>
     <if test="payWeixinOrderId != null" >
-      and pay_weixin_order_id =#{payWeixinOrderId}
+      and m.pay_weixin_order_id =#{payWeixinOrderId}
     </if>
     <if test="createOperator != null" >
-      and create_operator =#{createOperator}
+      and m.create_operator =#{createOperator}
+    </if>
+    <if test="userId != null" >
+      and m.user_id =#{userId}
+    </if>
+    <if test="productId != null" >
+      and m.product_id =#{productId}
+    </if>
+    <if test="productName != null" >
+      and mp.product_name like concat('%',#{productName},'%')
+    </if>
+    <if test="payWeixinStatus != null" >
+      and m.pay_weixin_status =#{payWeixinStatus}
+    </if>
+    <if test="status != null" >
+      and m.status =#{status}
+    </if>
+    <if test="orgId != null" >
+      and m.org_id =#{orgId}
+    </if>
+    <if test="orgName != null" >
+      and o.org_name like concat('%',#{orgName},'%')
     </if>
       order by id desc
           limit #{pageStart},#{limit}

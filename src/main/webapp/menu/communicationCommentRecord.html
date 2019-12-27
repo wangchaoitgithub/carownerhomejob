@@ -32,12 +32,44 @@
             <div id="rrapp" v-cloak>
                 <div v-show="showList" class="col-md-10" style="padding: 0;">
                     <div class="grid-btn" style="padding-bottom: 15px;">
+                        <!--根据userId查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="uid" style="display: none"></div>
+                            <input id="userId"  class="form-control"  placeholder="创建者Id"/>
+                        </div>
+                        <span class="dian">，</span>
                         <!--根据nickname查询-->
                         <div class="col-sm-2" style="padding: 0;">
                             <div id="id" style="display: none"></div>
                             <input id="nickName"  class="form-control"  placeholder="创建者"/>
                         </div>
                         <span class="dian">，</span>
+                        <!--根据receive_user_id查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="id1" style="display: none"></div>
+                            <input id="receiveUserId"  class="form-control"  placeholder="回复的那个人的id"/>
+                        </div>
+                        <span class="dian">，</span>
+
+                        <!--receiveUserName-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="id2" style="display: none"></div>
+                            <input id="receiveUserName"  class="form-control"  placeholder="回复的那个人的名称"/>
+                        </div>
+                        <span class="dian">，</span>
+                        <!--根据type查询-->
+                        <div class="col-sm-2" style="padding: 0;">
+                            <div id="id8" style="display: none"></div>
+                            <!--                            <input id="type"  class="form-control"  placeholder="类型"/>-->
+                            <select  class="form-control"  id="type">
+                                <option value=null>请选择评论类型</option>
+                                <option value="secretWord">悄悄话</option>
+                                <option value="activity">群活动</option>
+                                <option value="forum">论坛帖子</option>
+                                <option value="comment">评论</option>
+                            </select>
+                        </div>
+                        <br><br>
                         <!--根据时间查询-->
                         <div class="col-sm-2" style="padding: 0;">
                             <div id="commonId" style="display: none"></div>

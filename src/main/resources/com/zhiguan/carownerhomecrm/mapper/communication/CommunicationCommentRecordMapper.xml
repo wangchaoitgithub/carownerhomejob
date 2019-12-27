@@ -18,6 +18,7 @@
     <result column="comment_count" jdbcType="INTEGER" property="commentCount" />
     <result column="good_count" jdbcType="INTEGER" property="goodCount" />
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="receive_user_name" jdbcType="VARCHAR" property="receiveUserName" />
   </resultMap>
   <sql id="Base_Column_List">
     id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, user_id, 
@@ -213,14 +214,27 @@
 
 
   <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.communication.CommunicationCommentRecord" resultMap="BaseResultMap">
-      SELECT c.*,u.nick_name
-      FROM communication_comment_record c JOIN user_base_info u ON c.user_id = u.id
-      WHERE c.is_Deleted = 'n'
+    SELECT c.*,u.nick_name,ur.nick_name as receive_user_name
+    FROM communication_comment_record c JOIN user_base_info u ON c.user_id = u.id
+    JOIN user_base_info AS ur ON ur.id = c.receive_user_id
+    WHERE c.is_Deleted = 'n'
     <if test="starDate != null and endDate != null" >
       and c.create_time BETWEEN #{starDate} and #{endDate}
     </if>
     <if test="nickName != null" >
       and u.nick_name = #{nickName}
+    </if>
+    <if test="userId != null" >
+      and c.user_id = #{userId}
+    </if>
+    <if test="receiveUserId != null" >
+      and c.receive_user_id = #{receiveUserId}
+    </if>
+    <if test="receiveUserName != null" >
+      and ur.nick_name = #{receiveUserName}
+    </if>
+    <if test="type != null" >
+      and c.type = #{type}
     </if>
       order by c.id desc
           limit #{pageStart},#{limit}

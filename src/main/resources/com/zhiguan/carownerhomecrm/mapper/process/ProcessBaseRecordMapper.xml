@@ -20,6 +20,8 @@
     <result column="bak1" jdbcType="VARCHAR" property="bak1" />
     <result column="bak2" jdbcType="VARCHAR" property="bak2" />
     <result column="bak3" jdbcType="VARCHAR" property="bak3" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="status_null" jdbcType="VARCHAR" property="statusNull" />
   </resultMap>
   <sql id="Base_Column_List">
     id, is_Deleted, create_Operator, create_time, last_Operator, last_Modify_Time, user_id, 
@@ -246,14 +248,33 @@
 
 
   <select id="pageListAll"  parameterType="com.zhiguan.carownerhomecrm.domain.process.ProcessBaseRecord" resultMap="BaseResultMap">
-      select *
-      from process_base_record
-      where is_deleted = 'n'
+        select p.*,u.nick_name
+        from process_base_record p,user_base_info u
+        where p.is_deleted = 'n'
+        and p.next_check_user_id = u.id
       <if test="starDate != null and endDate != null" >
-        and create_time BETWEEN #{starDate} and #{endDate}
+        and p.create_time BETWEEN #{starDate} and #{endDate}
       </if>
       <if test="userId != null" >
-        and user_id =#{userId}
+        and p.user_id =#{userId}
+      </if>
+      <if test="nextCheckUserId != null" >
+          and p.next_check_user_id =#{nextCheckUserId}
+      </if>
+      <if test="businessType != null" >
+          and p.business_type =#{businessType}
+      </if>
+      <if test="result != null" >
+          and p.result =#{result}
+      </if>
+      <if test="status != null" >
+          and p.status =#{status}
+      </if>
+      <if test="statusNull != null" >
+        and ISNULL(p.status)
+      </if>
+      <if test="lastProcessId != null" >
+          and p.last_process_id =#{lastProcessId}
       </if>
       order by id desc
           limit #{pageStart},#{limit}

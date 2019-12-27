@@ -27,6 +27,16 @@ public class ProcessBaseRecordAction extends BaseAction {
             String userId = request.getParameter("userId");
             String starDate = request.getParameter("starDate");
             String endDate = request.getParameter("endDate");
+            String nextCheckUserId = request.getParameter("nextCheckUserId");
+            String businessType = request.getParameter("businessType");
+            String resul = request.getParameter("result");
+            String status = request.getParameter("status");
+            String lastProcessId = request.getParameter("lastProcessId");
+
+
+
+
+
             if(StringUtil.isEmpty(page)){
                 page = "1";
             }
@@ -48,6 +58,48 @@ public class ProcessBaseRecordAction extends BaseAction {
             if(!StringUtil.isEmpty(userId)){
                 entity.setUserId(Long.parseLong(userId));
             }
+            if(!StringUtil.isEmpty(nextCheckUserId)){
+                entity.setNextCheckUserId(Long.parseLong(nextCheckUserId));
+            }
+            if(!StringUtil.isEmpty(businessType)){
+                if (!businessType.equals("null") ){
+                    if (businessType.equals("认证")){
+                        entity.setBusinessType("auth");
+                    }else if (businessType.equals("用户信息修改")){
+                        entity.setBusinessType("userInfoUpdate");
+                    }else if (businessType.equals("副牌")){
+                        entity.setBusinessType("buyViceNumber");
+                    }else if (businessType.equals("求助")){
+                        entity.setBusinessType("help");
+                    }else if (businessType.equals("发帖")){
+                        entity.setBusinessType("forum");
+                    }else if (businessType.equals("评论")){
+                        entity.setBusinessType("comment");
+                    }else if (businessType.equals("导入群活动")){
+                        entity.setBusinessType("addGroupActivity");
+                    }
+                }
+            }
+            if(!StringUtil.isEmpty(resul)){
+                if (!resul.equals("null") ){
+                    entity.setResult(resul);
+                }
+            }
+            if(!StringUtil.isEmpty(status)){
+                if (!status.equals("null") && !status.equals("nulls") ){
+                    entity.setStatus(status);
+                }else if (status.equals("nulls")){
+                    entity.setStatusNull(status);
+                }
+            }
+            if(!StringUtil.isEmpty(lastProcessId)){
+                entity.setLastProcessId(Long.parseLong(lastProcessId));
+            }
+
+
+
+
+
             entity.setCurrPage(Integer.parseInt(page));
             entity.setLimit(Integer.parseInt(limit));
             entity.setPageStart(PageUtils.getPageStart(Integer.parseInt(page),Integer.parseInt(limit)));
