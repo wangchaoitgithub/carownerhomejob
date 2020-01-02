@@ -159,7 +159,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.1.41</version>
+            <version>1.2.25</version>
         </dependency>
         <!-- 日志框架 log4j2.0版本跟1.X性能有质的飞跃 日志级别（高到低）：OFF、FATAL、ERROR（默认）、WARN、INFO、DEBUG、TRACE、 ALL -->
 
